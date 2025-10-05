@@ -3,8 +3,8 @@ import React from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "WaveMark",
-  description: "A modern Next.js application with Tailwind CSS, shadcn/ui, and Suisse font",
+  title: "Wavemark",
+  description: "watermarked ai generated speech",
   icons: {
     icon: "/wave_transparent.png",
     shortcut: "/wave_transparent.png",
