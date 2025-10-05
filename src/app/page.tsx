@@ -1,5 +1,6 @@
 import TopBar from "@/components/TopBar";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -23,7 +24,14 @@ export default function Home() {
             </a>
           </Button>
         </div>
-        <div className="w-1/2 pl-8 pr-16" style={{ marginTop: '15vh' }}>
+        <div className="w-1/2 pl-8 pr-16 flex items-center justify-center" style={{ marginTop: '15vh', height: '60vh' }}>
+          <Image
+            src="/wave_transparent.png"
+            alt="WaveMark logo"
+            width={300}
+            height={300}
+            className="object-contain"
+          />
         </div>
       </div>
     </div>
