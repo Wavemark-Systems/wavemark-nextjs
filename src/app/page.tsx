@@ -25,13 +25,7 @@ export default function Home() {
           </Button>
         </div>
         <div className="w-1/2 pl-8 pr-16 flex items-center justify-center" style={{ marginTop: '15vh', height: '60vh' }}>
-          <Image
-            src="/wave_transparent.png"
-            alt="WaveMark logo"
-            width={300}
-            height={300}
-            className="object-contain"
-          />
+         
         </div>
       </div>
     </div>
