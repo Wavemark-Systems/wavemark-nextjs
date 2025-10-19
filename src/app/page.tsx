@@ -9,18 +9,18 @@ export default function Home() {
       <div className="flex">
         <div className="w-1/2 pl-16 pr-8" style={{ marginTop: '15vh' }}>
           <h1 className="text-6xl leading-tight mb-6 text-black">
-            Make your AI generated speech verifiable.
+            Text-to-Speech for Luxembourgish that actually works.
           </h1>
           <p className="text-xl text-black leading-relaxed mb-8">
-            Wavemark embeds imperceptible, verifiable information within AI-generated speech. Encode provenance and metadata directly into synthetic audio.
+            neiom is a state-of-the-art TTS model trained specifically for Luxembourgish. Natural-sounding speech synthesis that captures the nuances of the language.
           </p>
           <Button asChild className="bg-white text-black border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:bg-white hover:text-black hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 rounded-md px-8 py-6 text-lg font-normal">
             <a 
-              href="https://github.com/Wavemark-Systems/wavemark" 
+              href="#demo" 
               target="_blank" 
               rel="noopener noreferrer"
             >
-              Get Started
+              Try Demo
             </a>
           </Button>
         </div>
