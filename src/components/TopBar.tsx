@@ -2,7 +2,7 @@ export default function TopBar() {
   return (
     <nav className="w-full px-16 py-6 flex justify-between items-center">
       <div className="text-xl font-normal text-black">
-        Wavemark Systems
+        Neiom Systems
       </div>
       <div className="flex items-center gap-8">
         <a 
