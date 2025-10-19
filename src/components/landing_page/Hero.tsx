@@ -7,7 +7,7 @@ export default function Hero() {
         Text-to-Speech for Luxembourgish.
       </h1>
       <p className="text-xl text-black leading-relaxed mb-8 text-center max-w-3xl">
-        Neiom is a TTS model that uses continuous learning to handle out-of-scope data. It's software that just works. Vun Lëtzebuerger gebaut, fir Lëtzebuerger.
+        Neiom is a TTS model that uses continuous learning to handle out-of-scope data. It`&apos;`s software that just works. Vun Lëtzebuerger gebaut, fir Lëtzebuerger.
       </p>
       <div className="flex gap-4 justify-center">
         <Button asChild className="bg-black text-white border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:bg-black hover:text-white hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 rounded-md px-8 py-6 text-lg font-normal">
