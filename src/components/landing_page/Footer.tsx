@@ -5,6 +5,14 @@ export default function Footer() {
         <p className="text-sm sm:text-base text-gray-600">
           © 2025 Vivien Henz Productions
         </p>
+        <a 
+          href="https://vivienhenz.com" 
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs sm:text-sm text-gray-500 hover:text-gray-700 hover:underline mt-1 inline-block"
+        >
+          vivienhenz.com
+        </a>
       </div>
     </footer>
   );

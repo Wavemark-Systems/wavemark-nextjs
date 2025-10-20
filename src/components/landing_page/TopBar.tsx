@@ -6,18 +6,19 @@ export default function TopBar() {
       </div>
       <div className="flex items-center gap-4 sm:gap-6 lg:gap-8">
         <a 
-          href="https://vivienhenz.com" 
+          href="https://huggingface.co/spaces/vivienhenz/luxembourgish-tts" 
           target="_blank"
           rel="noopener noreferrer"
           className="text-black hover:underline text-sm sm:text-base lg:text-lg"
         >
-          Blog
+          Download
         </a>
         <a 
-          href="https://github.com/vivienhenz24/neiom-finetune" 
+          href="https://github.com/vivienhenz24" 
           target="_blank" 
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 text-black hover:underline text-sm sm:text-base lg:text-lg"
+          title="View on GitHub"
         >
           <svg 
             className="w-4 h-4 sm:w-5 sm:h-5" 

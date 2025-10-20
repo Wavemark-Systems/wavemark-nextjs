@@ -63,21 +63,23 @@ export default function Demo() {
   return (
     <div className="flex flex-col items-center px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 max-w-6xl mx-auto w-full">
       <div className="w-full border-2 border-black rounded-lg overflow-hidden">
-        <textarea
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          placeholder="Type or paste your Luxembourgish text here..."
-          spellCheck={false}
-          maxLength={MAX_TEXT_LENGTH}
-          className="w-full h-64 sm:h-80 lg:h-96 p-4 sm:p-6 text-black text-base sm:text-lg resize-none focus:outline-none border-0"
-        />
-        <div className="flex flex-col gap-2">
+        <div className="relative">
+          <textarea
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+            placeholder="Type or paste your Luxembourgish text here..."
+            spellCheck={false}
+            maxLength={MAX_TEXT_LENGTH}
+            className="w-full h-64 sm:h-80 lg:h-96 p-4 sm:p-6 pb-8 text-black text-base sm:text-lg resize-none focus:outline-none border-0"
+          />
           {/* Character Counter */}
-          <div className="px-4 py-2 border-t border-gray-200 bg-gray-50 text-right">
+          <div className="absolute bottom-2 right-2 px-2 py-1 bg-white/80 backdrop-blur-sm rounded">
             <span className={`text-xs sm:text-sm ${text.length > MAX_TEXT_LENGTH * 0.9 ? 'text-orange-600' : 'text-gray-500'}`}>
-              {text.length} / {MAX_TEXT_LENGTH} characters
+              {text.length} / {MAX_TEXT_LENGTH}
             </span>
           </div>
+        </div>
+        <div className="flex flex-col gap-0">
           {error && (
             <div className="px-4 py-2 bg-red-50 border-t border-red-200 text-red-600 text-xs sm:text-sm">
               {error}
