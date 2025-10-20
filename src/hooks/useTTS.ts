@@ -116,7 +116,7 @@ export function useTTS() {
       saveTimestamps(requestTimestamps.current);
       
       const response = await fetch(
-        'https://vivienhenz-luxembourgish-tts.hf.space/api/predict',
+        'https://vivienhenz-luxembourgish-tts.hf.space/run/predict',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -127,10 +127,13 @@ export function useTTS() {
       );
 
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        const errorText = await response.text();
+        console.error('API Error:', response.status, errorText);
+        throw new Error(`HTTP error! status: ${response.status} - ${errorText.substring(0, 100)}`);
       }
 
       const result: TTSResponse = await response.json();
+      console.log('API Response:', result);
       const url = result.data[0].url;
       
       setAudioURL(url);
@@ -138,6 +141,7 @@ export function useTTS() {
       
       return url;
     } catch (err) {
+      console.error('TTS Error:', err);
       const errorMessage = err instanceof Error ? err.message : 'Failed to generate speech';
       setError(errorMessage);
       setLoading(false);

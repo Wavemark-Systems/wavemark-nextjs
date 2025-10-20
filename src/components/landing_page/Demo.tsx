@@ -6,7 +6,7 @@ import { useTTS } from "@/hooks/useTTS";
 import { track } from '@vercel/analytics';
 
 export default function Demo() {
-  const [text, setText] = useState("Ech sinn haut moies fréi duerch d'Stad gaangen, wéi d'Sonn nach just iwwer d'Haiser gekuckt huet. Op der Avenue war et roueg; nëmme puer Leit hu sech e Kaffi geholl a si lues Richtung Büro getrëppelt.");
+  const [text, setText] = useState("Meng bomi huet fréier alt emol en zigarillo gefëmmt.");
   const { loading, error, generateSpeech, downloadAudio, audioURL } = useTTS();
   const [isPlaying, setIsPlaying] = useState(false);
   const [barCount, setBarCount] = useState(60);
