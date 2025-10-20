@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { useTTS } from "@/hooks/useTTS";
+import { useTTS, MAX_TEXT_LENGTH } from "@/hooks/useTTS";
 import { track } from '@vercel/analytics';
 
 export default function Demo() {
@@ -68,9 +68,16 @@ export default function Demo() {
           onChange={(e) => setText(e.target.value)}
           placeholder="Type or paste your Luxembourgish text here..."
           spellCheck={false}
+          maxLength={MAX_TEXT_LENGTH}
           className="w-full h-64 sm:h-80 lg:h-96 p-4 sm:p-6 text-black text-base sm:text-lg resize-none focus:outline-none border-0"
         />
         <div className="flex flex-col gap-2">
+          {/* Character Counter */}
+          <div className="px-4 py-2 border-t border-gray-200 bg-gray-50 text-right">
+            <span className={`text-xs sm:text-sm ${text.length > MAX_TEXT_LENGTH * 0.9 ? 'text-orange-600' : 'text-gray-500'}`}>
+              {text.length} / {MAX_TEXT_LENGTH} characters
+            </span>
+          </div>
           {error && (
             <div className="px-4 py-2 bg-red-50 border-t border-red-200 text-red-600 text-xs sm:text-sm">
               {error}
