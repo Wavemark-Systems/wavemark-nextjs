@@ -9,7 +9,19 @@ export default function Demo() {
   const [text, setText] = useState("Ech sinn haut moies fréi duerch d'Stad gaangen, wéi d'Sonn nach just iwwer d'Haiser gekuckt huet. Op der Avenue war et roueg; nëmme puer Leit hu sech e Kaffi geholl a si lues Richtung Büro getrëppelt.");
   const { loading, error, generateSpeech, downloadAudio, audioURL } = useTTS();
   const [isPlaying, setIsPlaying] = useState(false);
+  const [barCount, setBarCount] = useState(60);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  // Set bar count based on screen size
+  useEffect(() => {
+    const updateBarCount = () => {
+      setBarCount(window.innerWidth < 640 ? 30 : 60);
+    };
+    
+    updateBarCount();
+    window.addEventListener('resize', updateBarCount);
+    return () => window.removeEventListener('resize', updateBarCount);
+  }, []);
 
   const handleGenerate = async () => {
     // Track audio generation event
@@ -47,26 +59,26 @@ export default function Demo() {
   }, [audioURL]);
 
   return (
-    <div className="flex flex-col items-center px-8 py-16 max-w-6xl mx-auto w-full">
+    <div className="flex flex-col items-center px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 max-w-6xl mx-auto w-full">
       <div className="w-full border-2 border-black rounded-lg overflow-hidden">
         <textarea
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder="Type or paste your Luxembourgish text here..."
           spellCheck={false}
-          className="w-full h-96 p-6 text-black text-lg resize-none focus:outline-none border-0"
+          className="w-full h-64 sm:h-80 lg:h-96 p-4 sm:p-6 text-black text-base sm:text-lg resize-none focus:outline-none border-0"
         />
         <div className="flex flex-col gap-2">
           {error && (
-            <div className="px-4 py-2 bg-red-50 border-t border-red-200 text-red-600 text-sm">
+            <div className="px-4 py-2 bg-red-50 border-t border-red-200 text-red-600 text-xs sm:text-sm">
               {error}
             </div>
           )}
-          <div className="flex gap-4 p-4 border-t border-gray-100 bg-white justify-end">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 p-3 sm:p-4 border-t border-gray-100 bg-white sm:justify-end">
             <Button 
               onClick={handleGenerate}
               disabled={loading || !text.trim()}
-              className="bg-black text-white border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:bg-black hover:text-white hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 rounded-md px-8 py-3 text-base font-normal flex items-center gap-2 h-[44px] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-x-0 disabled:hover:translate-y-0 disabled:hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)]"
+              className="w-full sm:w-auto bg-black text-white border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:bg-black hover:text-white hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 rounded-md px-6 sm:px-8 py-3 text-sm sm:text-base font-normal flex items-center justify-center gap-2 h-[44px] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-x-0 disabled:hover:translate-y-0 disabled:hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)]"
             >
               {loading ? (
                 <>
@@ -90,7 +102,7 @@ export default function Demo() {
             <button 
               onClick={handleDownload}
               disabled={loading || !text.trim() || !audioURL}
-              className="bg-black text-white border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:bg-black hover:text-white hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 rounded-md px-4 py-3 flex items-center justify-center h-[44px] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-x-0 disabled:hover:translate-y-0 disabled:hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)]"
+              className="w-full sm:w-auto bg-black text-white border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:bg-black hover:text-white hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 rounded-md px-4 py-3 flex items-center justify-center gap-2 h-[44px] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-x-0 disabled:hover:translate-y-0 disabled:hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)]"
               aria-label="Download audio"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -98,34 +110,35 @@ export default function Demo() {
                 <polyline points="7 10 12 15 17 10" />
                 <line x1="12" y1="15" x2="12" y2="3" />
               </svg>
+              <span className="sm:hidden">Download</span>
             </button>
           </div>
           
           {/* Audio Player with Waveform */}
           {audioURL && (
-            <div className="border-t border-gray-200 bg-gray-50 p-4">
+            <div className="border-t border-gray-200 bg-gray-50 p-3 sm:p-4">
               <audio ref={audioRef} className="hidden" />
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3 sm:gap-4">
                 <button
                   onClick={handlePlayPause}
-                  className="flex-shrink-0 w-12 h-12 rounded-full bg-black text-white flex items-center justify-center hover:bg-gray-800 transition-colors shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px]"
+                  className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black text-white flex items-center justify-center hover:bg-gray-800 transition-colors shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px]"
                   aria-label={isPlaying ? "Pause" : "Play"}
                 >
                   {isPlaying ? (
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="currentColor">
                       <rect x="6" y="4" width="4" height="16" />
                       <rect x="14" y="4" width="4" height="16" />
                     </svg>
                   ) : (
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="currentColor">
                       <polygon points="5 3 19 12 5 21 5 3" />
                     </svg>
                   )}
                 </button>
                 
                 {/* Sound Wave Visualization */}
-                <div className="flex-1 flex items-center gap-1 h-12">
-                  {[...Array(60)].map((_, i) => {
+                <div className="flex-1 flex items-center gap-0.5 sm:gap-1 h-10 sm:h-12">
+                  {[...Array(barCount)].map((_, i) => {
                     const height = Math.sin(i / 3) * 20 + 25 + Math.random() * 10;
                     return (
                       <div

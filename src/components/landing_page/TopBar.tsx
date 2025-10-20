@@ -1,15 +1,15 @@
 export default function TopBar() {
   return (
-    <nav className="w-full px-16 py-6 flex justify-between items-center">
-      <div className="text-xl font-normal text-black">
+    <nav className="w-full px-4 sm:px-8 lg:px-16 py-4 sm:py-6 flex justify-between items-center">
+      <div className="text-base sm:text-lg lg:text-xl font-normal text-black">
         Neiom Systems
       </div>
-      <div className="flex items-center gap-8">
+      <div className="flex items-center gap-4 sm:gap-6 lg:gap-8">
         <a 
           href="https://vivienhenz.com" 
           target="_blank"
           rel="noopener noreferrer"
-          className="text-black hover:underline text-lg"
+          className="text-black hover:underline text-sm sm:text-base lg:text-lg"
         >
           Blog
         </a>
@@ -17,10 +17,10 @@ export default function TopBar() {
           href="https://github.com/vivienhenz24/neiom-finetune" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-black hover:underline text-lg"
+          className="inline-flex items-center gap-2 text-black hover:underline text-sm sm:text-base lg:text-lg"
         >
           <svg 
-            className="w-5 h-5" 
+            className="w-4 h-4 sm:w-5 sm:h-5" 
             fill="currentColor" 
             viewBox="0 0 24 24"
           >
