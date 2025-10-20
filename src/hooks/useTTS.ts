@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import { Client } from '@gradio/client';
 
 export interface TTSResponse {
   data: Array<{
@@ -115,33 +116,41 @@ export function useTTS() {
       requestTimestamps.current.push(timestamp);
       saveTimestamps(requestTimestamps.current);
       
-      const response = await fetch(
-        'https://vivienhenz-luxembourgish-tts.hf.space/run/predict',
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            data: [text]
-          })
+      // Connect to the Gradio space using the official client
+      const client = await Client.connect("vivienhenz/luxembourgish-tts");
+      
+      // Use the generate_speech endpoint with all 5 parameters
+      const job = client.submit("/generate_speech", [
+        text,    // text input
+        1024,    // max_new_tokens
+        0.7,     // temperature
+        0.95,    // top_p
+        1.0      // repetition_penalty
+      ]);
+      
+      // Iterate through the async generator
+      for await (const message of job) {
+        if (message.type === 'data') {
+          const data = message.data as Array<{ url: string } | string>;
+          const url = typeof data[0] === 'string' ? data[0] : data[0]?.url;
+          
+          if (url) {
+            setAudioURL(url);
+            setLoading(false);
+            return url;
+          }
         }
-      );
-
-      if (!response.ok) {
-        const errorText = await response.text();
-        console.error('API Error:', response.status, errorText);
-        throw new Error(`HTTP error! status: ${response.status} - ${errorText.substring(0, 100)}`);
+        
+        if (message.type === 'status') {
+          if (message.stage === 'error') {
+            const errorMsg = typeof message.message === 'string' ? message.message : 'Generation failed';
+            throw new Error(errorMsg);
+          }
+        }
       }
-
-      const result: TTSResponse = await response.json();
-      console.log('API Response:', result);
-      const url = result.data[0].url;
       
-      setAudioURL(url);
-      setLoading(false);
-      
-      return url;
+      throw new Error('No audio URL received');
     } catch (err) {
-      console.error('TTS Error:', err);
       const errorMessage = err instanceof Error ? err.message : 'Failed to generate speech';
       setError(errorMessage);
       setLoading(false);
