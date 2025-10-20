@@ -6,7 +6,7 @@ import { useTTS } from "@/hooks/useTTS";
 import { track } from '@vercel/analytics';
 
 export default function Demo() {
-  const [text, setText] = useState("D'kanner hëllefen all mëtteg spullen.");
+  const [text, setText] = useState("Mir haten de wand am réck a koume flott vun der plaz.");
   const { loading, error, generateSpeech, downloadAudio, audioURL } = useTTS();
   const [isPlaying, setIsPlaying] = useState(false);
   const [barCount, setBarCount] = useState(60);
@@ -14,7 +14,7 @@ export default function Demo() {
 
   // Set bar count based on screen size
 
-  
+
   useEffect(() => {
     const updateBarCount = () => {
       setBarCount(window.innerWidth < 640 ? 30 : 60);
