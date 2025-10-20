@@ -5,7 +5,7 @@ export default function Hero() {
         Text-to-Speech for Luxembourgish.
       </h1>
       <p className="text-xl text-black leading-relaxed mb-8 text-center max-w-3xl">
-        Neiom is a state of the art TTS model built using acontinuous learning approach. Vun Lëtzebuerger gebaut, fir Lëtzebuerger.
+        Neiom is a state of the art TTS model built specifically to handle Luxembourgish text and audio. Vun Lëtzebuerger gebaut, fir Lëtzebuerger.
       </p>
     </div>
   );
