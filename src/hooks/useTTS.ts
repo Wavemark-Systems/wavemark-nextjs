@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 export interface TTSResponse {
   data: Array<{
@@ -9,11 +9,83 @@ export interface TTSResponse {
   }>;
 }
 
+// Rate limiting configuration
+const MAX_REQUESTS_PER_MINUTE = 10;
+const MAX_REQUESTS_PER_HOUR = 30;
+const MINUTE_IN_MS = 60 * 1000;
+const HOUR_IN_MS = 60 * 60 * 1000;
+const MAX_TEXT_LENGTH = 5000; // Maximum characters per request
+
 export function useTTS() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [audioURL, setAudioURL] = useState<string | null>(null);
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
+  
+  // Track request timestamps for rate limiting (persisted in localStorage)
+  const requestTimestamps = useRef<number[]>([]);
+
+  // Load timestamps from localStorage on initialization
+  const loadTimestamps = (): number[] => {
+    if (typeof window === 'undefined') return [];
+    try {
+      const stored = localStorage.getItem('tts_timestamps');
+      if (stored) {
+        const timestamps = JSON.parse(stored) as number[];
+        const now = Date.now();
+        // Only keep timestamps from the last hour
+        return timestamps.filter(timestamp => now - timestamp < HOUR_IN_MS);
+      }
+    } catch {
+      // Ignore errors
+    }
+    return [];
+  };
+
+  // Save timestamps to localStorage
+  const saveTimestamps = (timestamps: number[]) => {
+    if (typeof window === 'undefined') return;
+    try {
+      localStorage.setItem('tts_timestamps', JSON.stringify(timestamps));
+    } catch {
+      // Ignore errors
+    }
+  };
+
+  const checkRateLimit = (): { allowed: boolean; message?: string } => {
+    const now = Date.now();
+    
+    // Load existing timestamps from localStorage
+    if (requestTimestamps.current.length === 0) {
+      requestTimestamps.current = loadTimestamps();
+    }
+    
+    // Remove timestamps older than 1 hour
+    requestTimestamps.current = requestTimestamps.current.filter(
+      timestamp => now - timestamp < HOUR_IN_MS
+    );
+    
+    // Count requests in the last minute
+    const recentRequests = requestTimestamps.current.filter(
+      timestamp => now - timestamp < MINUTE_IN_MS
+    );
+    
+    if (recentRequests.length >= MAX_REQUESTS_PER_MINUTE) {
+      return {
+        allowed: false,
+        message: `Rate limit exceeded. Please wait a moment before trying again.`
+      };
+    }
+    
+    if (requestTimestamps.current.length >= MAX_REQUESTS_PER_HOUR) {
+      return {
+        allowed: false,
+        message: `Hourly rate limit exceeded. Please try again later.`
+      };
+    }
+    
+    return { allowed: true };
+  };
 
   const generateSpeech = async (text: string): Promise<string | null> => {
     if (!text.trim()) {
@@ -21,10 +93,28 @@ export function useTTS() {
       return null;
     }
 
+    // Check text length limit
+    if (text.length > MAX_TEXT_LENGTH) {
+      setError(`Text is too long. Maximum ${MAX_TEXT_LENGTH} characters allowed.`);
+      return null;
+    }
+
+    // Check rate limit before making request
+    const rateLimitCheck = checkRateLimit();
+    if (!rateLimitCheck.allowed) {
+      setError(rateLimitCheck.message || 'Rate limit exceeded');
+      return null;
+    }
+
     setLoading(true);
     setError(null);
 
     try {
+      // Record this request timestamp
+      const timestamp = Date.now();
+      requestTimestamps.current.push(timestamp);
+      saveTimestamps(requestTimestamps.current);
+      
       const response = await fetch(
         'https://vivienhenz-luxembourgish-tts.hf.space/api/predict',
         {
