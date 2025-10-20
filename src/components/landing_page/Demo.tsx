@@ -1,20 +1,50 @@
 'use client';
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { useTTS } from "@/hooks/useTTS";
+import { track } from '@vercel/analytics';
 
 export default function Demo() {
   const [text, setText] = useState("Ech sinn haut moies fréi duerch d'Stad gaangen, wéi d'Sonn nach just iwwer d'Haiser gekuckt huet. Op der Avenue war et roueg; nëmme puer Leit hu sech e Kaffi geholl a si lues Richtung Büro getrëppelt. D'Geschäfter hunn ee nom aneren hir Still erausgestallt, an de Geroch vu frësche Croissanten ass duerch d'Loft gezunn");
-  const { loading, error, playAudio, downloadAudio } = useTTS();
+  const { loading, error, generateSpeech, downloadAudio, audioURL } = useTTS();
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  const handlePlay = () => {
-    playAudio(text);
+  const handleGenerate = async () => {
+    // Track audio generation event
+    track('audio_generated', {
+      text_length: text.length,
+    });
+    await generateSpeech(text);
+  };
+
+  const handlePlayPause = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+        // Track audio playback event
+        track('audio_played', {
+          text_length: text.length,
+        });
+      }
+      setIsPlaying(!isPlaying);
+    }
   };
 
   const handleDownload = () => {
     downloadAudio(text, 'luxembourgish-audio.wav');
   };
+
+  // Update audio element when audioURL changes
+  useEffect(() => {
+    if (audioURL && audioRef.current) {
+      audioRef.current.src = audioURL;
+      audioRef.current.onended = () => setIsPlaying(false);
+    }
+  }, [audioURL]);
 
   return (
     <div className="flex flex-col items-center px-8 py-16 max-w-6xl mx-auto w-full">
@@ -34,7 +64,7 @@ export default function Demo() {
           )}
           <div className="flex gap-4 p-4 border-t border-gray-100 bg-white justify-end">
             <Button 
-              onClick={handlePlay}
+              onClick={handleGenerate}
               disabled={loading || !text.trim()}
               className="bg-black text-white border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:bg-black hover:text-white hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 rounded-md px-8 py-3 text-base font-normal flex items-center gap-2 h-[44px] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-x-0 disabled:hover:translate-y-0 disabled:hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)]"
             >
@@ -44,20 +74,22 @@ export default function Demo() {
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                   </svg>
-                  Loading...
+                  Generating...
                 </>
               ) : (
                 <>
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polygon points="5 3 19 12 5 21 5 3" />
+                    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                    <line x1="12" x2="12" y1="19" y2="22"/>
                   </svg>
-                  Play
+                  Generate Audio
                 </>
               )}
             </Button>
             <button 
               onClick={handleDownload}
-              disabled={loading || !text.trim()}
+              disabled={loading || !text.trim() || !audioURL}
               className="bg-black text-white border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:bg-black hover:text-white hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 rounded-md px-4 py-3 flex items-center justify-center h-[44px] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-x-0 disabled:hover:translate-y-0 disabled:hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)]"
               aria-label="Download audio"
             >
@@ -68,6 +100,50 @@ export default function Demo() {
               </svg>
             </button>
           </div>
+          
+          {/* Audio Player with Waveform */}
+          {audioURL && (
+            <div className="border-t border-gray-200 bg-gray-50 p-4">
+              <audio ref={audioRef} className="hidden" />
+              <div className="flex items-center gap-4">
+                <button
+                  onClick={handlePlayPause}
+                  className="flex-shrink-0 w-12 h-12 rounded-full bg-black text-white flex items-center justify-center hover:bg-gray-800 transition-colors shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px]"
+                  aria-label={isPlaying ? "Pause" : "Play"}
+                >
+                  {isPlaying ? (
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                      <rect x="6" y="4" width="4" height="16" />
+                      <rect x="14" y="4" width="4" height="16" />
+                    </svg>
+                  ) : (
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                      <polygon points="5 3 19 12 5 21 5 3" />
+                    </svg>
+                  )}
+                </button>
+                
+                {/* Sound Wave Visualization */}
+                <div className="flex-1 flex items-center gap-1 h-12">
+                  {[...Array(60)].map((_, i) => {
+                    const height = Math.sin(i / 3) * 20 + 25 + Math.random() * 10;
+                    return (
+                      <div
+                        key={i}
+                        className={`flex-1 bg-black rounded-full transition-all duration-150 ${
+                          isPlaying ? 'animate-pulse' : ''
+                        }`}
+                        style={{
+                          height: `${height}%`,
+                          animationDelay: `${i * 0.05}s`,
+                        }}
+                      />
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

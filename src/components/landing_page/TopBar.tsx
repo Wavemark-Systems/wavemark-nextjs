@@ -6,19 +6,15 @@ export default function TopBar() {
       </div>
       <div className="flex items-center gap-8">
         <a 
-          href="/docs" 
-          className="text-black hover:underline text-lg"
-        >
-          Docs
-        </a>
-        <a 
-          href="/blog" 
+          href="https://vivienhenz.com" 
+          target="_blank"
+          rel="noopener noreferrer"
           className="text-black hover:underline text-lg"
         >
           Blog
         </a>
         <a 
-          href="https://github.com/Wavemark-Systems/wavemark" 
+          href="https://github.com/vivienhenz24/neiom-finetune" 
           target="_blank" 
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 text-black hover:underline text-lg"
