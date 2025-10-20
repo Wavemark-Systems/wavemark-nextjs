@@ -6,7 +6,7 @@ import { useTTS } from "@/hooks/useTTS";
 import { track } from '@vercel/analytics';
 
 export default function Demo() {
-  const [text, setText] = useState("Ech sinn haut moies fréi duerch d'Stad gaangen, wéi d'Sonn nach just iwwer d'Haiser gekuckt huet. Op der Avenue war et roueg; nëmme puer Leit hu sech e Kaffi geholl a si lues Richtung Büro getrëppelt. D'Geschäfter hunn ee nom aneren hir Still erausgestallt, an de Geroch vu frësche Croissanten ass duerch d'Loft gezunn");
+  const [text, setText] = useState("Ech sinn haut moies fréi duerch d'Stad gaangen, wéi d'Sonn nach just iwwer d'Haiser gekuckt huet. Op der Avenue war et roueg; nëmme puer Leit hu sech e Kaffi geholl a si lues Richtung Büro getrëppelt.");
   const { loading, error, generateSpeech, downloadAudio, audioURL } = useTTS();
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
