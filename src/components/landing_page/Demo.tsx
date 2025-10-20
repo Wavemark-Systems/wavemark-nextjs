@@ -13,6 +13,7 @@ export default function Demo() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   // Set bar count based on screen size
+
   
   useEffect(() => {
     const updateBarCount = () => {
