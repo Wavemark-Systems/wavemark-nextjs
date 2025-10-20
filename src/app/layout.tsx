@@ -3,12 +3,17 @@ import React from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Wavemark",
-  description: "watermarked ai generated speech",
+  title: "neiom",
+  description: "Luxembourgish text-to-speech",
   icons: {
-    icon: "/wave_transparent.png",
-    shortcut: "/wave_transparent.png",
-    apple: "/wave_transparent.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/neiom-logo.svg", type: "image/svg+xml" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/icon-192.png",
   },
 };
 
