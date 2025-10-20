@@ -15,7 +15,7 @@ const MAX_REQUESTS_PER_MINUTE = 10;
 const MAX_REQUESTS_PER_HOUR = 30;
 const MINUTE_IN_MS = 60 * 1000;
 const HOUR_IN_MS = 60 * 60 * 1000;
-export const MAX_TEXT_LENGTH = 5000; // Maximum characters per request
+export const MAX_TEXT_LENGTH = 200; // Maximum characters per request
 
 export function useTTS() {
   const [loading, setLoading] = useState(false);
