@@ -89,6 +89,10 @@ export default function Examples() {
     {
       text: "De stiermer stoung eendeiteg am abseits.",
       audioSrc: "/audio (3).wav"
+    },
+    {
+      text: "Je m'apelle Vivien et j'habite en Amerique",
+      audioSrc: "/luxembourgish-audio (2).wav"
     }
   ];
 
