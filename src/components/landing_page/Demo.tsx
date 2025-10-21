@@ -65,9 +65,11 @@ export default function Demo() {
       <div className="w-full border-2 border-black rounded-lg overflow-hidden">
         {/* GPU Quota Notice */}
         <div className="p-3 border-b border-red-200 bg-red-50/30">
+          <p className="text-sm text-red-700 text-center mb-2">
+            Due to higher demand than I expected, I&apos;ve exceeded my free GPU quota for today. Please use the Download link above to access the model on HuggingFace, or check out the examples below.
+          </p>
           <p className="text-sm text-red-700 text-center">
-            Due to higher demand than I expected, I&apos;ve exceeded my free GPU quota for today. Please use the Download link above to access the model on HuggingFace, or check out the examples below. 
-            Entschëllegt.
+            Wéinst méi grousser Nofro wéi erwaart, hunn ech mäi gratis GPU Quota fir haut iwwerschratt. Benotzt w.e.g. de Download Link uewen fir op HuggingFace Zougang zum Modell ze kréien, oder kuckt Iech d&apos;Beispiller hei ënnendrënner un. Entschëllegt.
           </p>
         </div>
         <div className="relative">
