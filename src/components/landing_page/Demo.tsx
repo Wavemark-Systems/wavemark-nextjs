@@ -66,7 +66,8 @@ export default function Demo() {
         {/* GPU Quota Notice */}
         <div className="p-3 border-b border-red-200 bg-red-50/30">
           <p className="text-sm text-red-700 text-center">
-            Due to higher demand than I expected, I've exceeded my free GPU quota for today. Please use the Download link above to access the model on HuggingFace, or check out the examples below.
+            Due to higher demand than I expected, I&apos;ve exceeded my free GPU quota for today. Please use the Download link above to access the model on HuggingFace, or check out the examples below. 
+            Entschëllegt.
           </p>
         </div>
         <div className="relative">
