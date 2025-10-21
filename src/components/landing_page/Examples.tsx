@@ -91,7 +91,7 @@ export default function Examples() {
       audioSrc: "/audio (3).wav"
     },
     {
-      text: "Je m'apelle Vivien et j'habite en Amerique",
+      text: "Moien, je m'apelle Vivien et j'habite en Amerique",
       audioSrc: "/luxembourgish-audio (2).wav"
     }
   ];
