@@ -149,6 +149,8 @@ export function useTTS() {
         }
       }
       
+      // If we reach here, the job completed but no data was received
+      setLoading(false);
       throw new Error('No audio URL received');
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Failed to generate speech';
