@@ -6,7 +6,7 @@ import { useTTS, MAX_TEXT_LENGTH } from "@/hooks/useTTS";
 import { track } from '@vercel/analytics';
 
 export default function Demo() {
-  const [text, setText] = useState("Mir haten de wand am réck a koume flott vun der plaz.");
+  const [text, setText] = useState("");
   const { loading, error, generateSpeech, downloadAudio, audioURL } = useTTS();
   const [isPlaying, setIsPlaying] = useState(false);
   const [barCount, setBarCount] = useState(60);
@@ -63,6 +63,12 @@ export default function Demo() {
   return (
     <div className="flex flex-col items-center px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 max-w-6xl mx-auto w-full">
       <div className="w-full border-2 border-black rounded-lg overflow-hidden">
+        {/* GPU Quota Notice */}
+        <div className="p-3 border-b border-red-200 bg-red-50/30">
+          <p className="text-sm text-red-700 text-center">
+            Due to higher demand than I expected, I've exceeded my free GPU quota for today. Please use the Download link above to access the model on HuggingFace, or check out the examples below.
+          </p>
+        </div>
         <div className="relative">
           <textarea
             value={text}
@@ -145,7 +151,7 @@ export default function Demo() {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Button 
                 onClick={handleGenerate}
-                disabled={loading || !text.trim()}
+                disabled={true}
                 className="w-full sm:w-auto bg-black text-white border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:bg-black hover:text-white hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 rounded-md px-6 sm:px-8 py-3 text-sm sm:text-base font-normal flex items-center justify-center gap-2 h-[44px] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-x-0 disabled:hover:translate-y-0 disabled:hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)]"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
