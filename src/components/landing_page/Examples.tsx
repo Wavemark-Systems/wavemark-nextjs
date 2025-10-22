@@ -93,6 +93,10 @@ export default function Examples() {
     {
       text: "Moien, je m'apelle Vivien et j'habite en Amerique",
       audioSrc: "/luxembourgish-audio (2).wav"
+    },
+    {
+      text: "Meng bomi huet fréier alt emol en zigarillo gefëmmt.",
+      audioSrc: "/audio (4).wav"
     }
   ];
 
