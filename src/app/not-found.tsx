@@ -19,7 +19,7 @@ export default function NotFound() {
             href="/"
             className="text-base font-normal text-black underline hover:no-underline transition-all"
           >
-            Zréck op d'Haaptsäit
+            Zréck op d&apos;Haaptsäit
           </Link>
         </div>
       </div>

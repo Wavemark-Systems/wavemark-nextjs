@@ -14,7 +14,7 @@ export default function LoginPage() {
               Umellen
             </h1>
             <p className="text-base text-gray-600">
-              Loggt Iech an fir op Är Kont z'accesséieren
+              Loggt Iech an fir op Är Kont z&apos;accesséieren
             </p>
           </div>
           
