@@ -114,21 +114,21 @@ export default function ExampleItem() {
             {/* Clone last item at the beginning */}
             <div className="w-full flex-shrink-0">
               <p className="text-lg sm:text-xl text-black">
-                "{examples[examples.length - 1].text}"
+                &ldquo;{examples[examples.length - 1].text}&rdquo;
               </p>
             </div>
             {/* Original items */}
             {examples.map((example, index) => (
               <div key={index} className="w-full flex-shrink-0">
                 <p className="text-lg sm:text-xl text-black">
-                  "{example.text}"
+                  &ldquo;{example.text}&rdquo;
                 </p>
               </div>
             ))}
             {/* Clone first item at the end */}
             <div className="w-full flex-shrink-0">
               <p className="text-lg sm:text-xl text-black">
-                "{examples[0].text}"
+                &ldquo;{examples[0].text}&rdquo;
               </p>
             </div>
           </div>
