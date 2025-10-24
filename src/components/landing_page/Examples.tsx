@@ -2,14 +2,33 @@
 
 import { useState, useRef } from "react";
 
-interface ExampleItemProps {
+interface Example {
   text: string;
   audioSrc: string;
 }
 
-function ExampleItem({ text, audioSrc }: ExampleItemProps) {
+const examples: Example[] = [
+  {
+    text: "D'nottär huet haut de mueren zwou venten an eng successioun ze traitéieren.",
+    audioSrc: "/audio (1).wav"
+  },
+  {
+    text: "De stiermer stoung eendeiteg am abseits.",
+    audioSrc: "/audio (3).wav"
+  },
+  {
+    text: "Meng bomi huet fréier alt emol en zigarillo gefëmmt.",
+    audioSrc: "/audio (4).wav"
+  }
+];
+
+export default function ExampleItem() {
+  const [currentIndex, setCurrentIndex] = useState(1); // Start at 1 because we'll clone first/last
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const currentExample = examples[(currentIndex - 1 + examples.length) % examples.length];
 
   const handlePlayPause = () => {
     if (audioRef.current) {
@@ -22,19 +41,105 @@ function ExampleItem({ text, audioSrc }: ExampleItemProps) {
     }
   };
 
+  const nextExample = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setCurrentIndex((prev) => prev + 1);
+    
+    setTimeout(() => {
+      if (currentIndex + 1 > examples.length) {
+        // Jump back to start without animation
+        setCurrentIndex(1);
+      }
+      setIsAnimating(false);
+    }, 300);
+  };
+
+  const prevExample = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setCurrentIndex((prev) => prev - 1);
+    
+    setTimeout(() => {
+      if (currentIndex - 1 <= 0) {
+        // Jump to end without animation
+        setCurrentIndex(examples.length);
+      }
+      setIsAnimating(false);
+    }, 300);
+  };
+
   return (
-    <div className="w-full border-2 border-black rounded-lg overflow-hidden bg-white">
-      <div className="p-4 sm:p-6">
-        <p className="text-base sm:text-lg text-black">
-          {text}
-        </p>
+    <div className="w-full border-2 border-black rounded-lg overflow-hidden bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,0.3)]">
+      {/* Header with title and navigation buttons */}
+      <div className="flex justify-between items-center p-4 bg-white">
+        <h3 className="text-lg sm:text-xl text-black">
+          Beispill
+        </h3>
+        <div className="flex gap-2">
+          <button
+            onClick={prevExample}
+            disabled={isAnimating}
+            className="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors disabled:opacity-50"
+            aria-label="Previous example"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button
+            onClick={nextExample}
+            disabled={isAnimating}
+            className="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors disabled:opacity-50"
+            aria-label="Next example"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      {/* Content area */}
+      <div className="p-6 sm:p-8 min-h-[120px] flex flex-col justify-center">
+        {/* Text with sliding animation */}
+        <div className="overflow-hidden relative">
+          <div 
+            className="flex"
+            style={{ 
+              transform: `translateX(-${currentIndex * 100}%)`,
+              transition: isAnimating ? 'transform 300ms ease-in-out' : 'none'
+            }}
+          >
+            {/* Clone last item at the beginning */}
+            <div className="w-full flex-shrink-0">
+              <p className="text-lg sm:text-xl text-black">
+                "{examples[examples.length - 1].text}"
+              </p>
+            </div>
+            {/* Original items */}
+            {examples.map((example, index) => (
+              <div key={index} className="w-full flex-shrink-0">
+                <p className="text-lg sm:text-xl text-black">
+                  "{example.text}"
+                </p>
+              </div>
+            ))}
+            {/* Clone first item at the end */}
+            <div className="w-full flex-shrink-0">
+              <p className="text-lg sm:text-xl text-black">
+                "{examples[0].text}"
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
       
       {/* Audio Player */}
-      <div className="border-t border-gray-200 bg-gray-50 p-3 sm:p-4">
+      <div className="border-t border-gray-200 bg-gray-50 p-4 sm:p-5">
         <audio 
           ref={audioRef} 
-          src={audioSrc}
+          src={currentExample.audioSrc}
           onEnded={() => setIsPlaying(false)}
           className="hidden" 
         />
@@ -79,43 +184,3 @@ function ExampleItem({ text, audioSrc }: ExampleItemProps) {
     </div>
   );
 }
-
-export default function Examples() {
-  const examples = [
-    {
-      text: "D'nottär huet haut de mueren zwou venten an eng successioun ze traitéieren.",
-      audioSrc: "/audio (1).wav"
-    },
-    {
-      text: "De stiermer stoung eendeiteg am abseits.",
-      audioSrc: "/audio (3).wav"
-    },
-    {
-      text: "Moien, je m'apelle Vivien et j'habite en Amerique",
-      audioSrc: "/luxembourgish-audio (2).wav"
-    },
-    {
-      text: "Meng bomi huet fréier alt emol en zigarillo gefëmmt.",
-      audioSrc: "/audio (4).wav"
-    }
-  ];
-
-  return (
-    <div className="flex flex-col items-center px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 max-w-6xl mx-auto w-full">
-      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal text-black mb-6 sm:mb-8 text-center">
-        Examples
-      </h2>
-      
-      <div className="w-full flex flex-col gap-4 sm:gap-6">
-        {examples.map((example, index) => (
-          <ExampleItem 
-            key={index}
-            text={example.text}
-            audioSrc={example.audioSrc}
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
-
