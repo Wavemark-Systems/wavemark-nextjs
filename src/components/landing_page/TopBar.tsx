@@ -38,15 +38,15 @@ export default function TopBar() {
 
   return (
     <nav className="w-full px-4 sm:px-8 lg:px-16 py-4 sm:py-6 flex justify-between items-center">
-      <div className="flex items-center gap-8">
-        <div className="text-base sm:text-lg lg:text-xl font-normal text-black">
+      <div className="flex items-baseline gap-8">
+        <Link href="/" className="text-lg sm:text-xl lg:text-2xl font-normal text-black hover:underline transition-all">
           Neiom Systems
-        </div>
+        </Link>
         
         <NavigationMenu viewport={isMobile}>
-          <NavigationMenuList>
+          <NavigationMenuList className="items-baseline">
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Léisungen</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="text-base sm:text-lg py-0">Léisungen</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid grid-cols-2 w-[600px] gap-3 p-4">
                   <ListItem href="/solutions/advertisements" title="Reklammen">
@@ -66,13 +66,13 @@ export default function TopBar() {
             </NavigationMenuItem>
             
             <NavigationMenuItem>
-              <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+              <NavigationMenuLink asChild className={`${navigationMenuTriggerStyle()} text-base sm:text-lg py-0`}>
                 <Link href="/company">Firma</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
             
             <NavigationMenuItem>
-              <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+              <NavigationMenuLink asChild className={`${navigationMenuTriggerStyle()} text-base sm:text-lg py-0`}>
                 <Link href="/careers">Karriär</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
@@ -80,9 +80,12 @@ export default function TopBar() {
         </NavigationMenu>
       </div>
       
-      <button className="px-4 py-2 bg-black text-white border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-sm sm:text-base font-medium">
+      <Link 
+        href="/login"
+        className="px-4 py-2 bg-black text-white border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-base sm:text-lg font-medium leading-none"
+      >
         Umellen
-      </button>
+      </Link>
     </nav>
   )
 }

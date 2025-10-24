@@ -70,7 +70,7 @@ export default function ExampleItem() {
   };
 
   return (
-    <div className="w-full border-2 border-black rounded-lg overflow-hidden bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,0.3)]">
+    <div className="w-full border-2 border-black rounded-lg overflow-hidden bg-white shadow-[0_0_0_4px_rgba(0,0,0,0.3)]">
       {/* Header with title and navigation buttons */}
       <div className="flex justify-between items-center p-4 bg-white">
         <h3 className="text-lg sm:text-xl text-black">
