@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef } from "react";
+import { useLocale } from "@/components/LocaleProvider";
 
 interface Example {
   text: string;
@@ -23,6 +24,7 @@ const examples: Example[] = [
 ];
 
 export default function ExampleItem() {
+  const { t } = useLocale();
   const [currentIndex, setCurrentIndex] = useState(1); // Start at 1 because we'll clone first/last
   const [isPlaying, setIsPlaying] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -72,9 +74,9 @@ export default function ExampleItem() {
   return (
     <div className="w-full border-2 border-black rounded-lg overflow-hidden bg-white shadow-[0_0_0_4px_rgba(0,0,0,0.3)]">
       {/* Header with title and navigation buttons */}
-      <div className="flex justify-between items-center p-4 bg-white">
-        <h3 className="text-lg sm:text-xl text-black">
-          Beispill
+      <div className="flex justify-between items-center p-3 sm:p-4 bg-white">
+        <h3 className="text-base sm:text-lg lg:text-xl text-black">
+          {t.example}
         </h3>
         <div className="flex gap-2">
           <button
