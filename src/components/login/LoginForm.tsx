@@ -77,12 +77,6 @@ export default function LoginForm() {
       </button>
 
       <div className="text-center">
-        <p className="text-sm text-gray-600">
-          {t.dontHaveAccount}{" "}
-          <a href="#" className="text-black underline hover:no-underline transition-all">
-            {t.signUp}
-          </a>
-        </p>
       </div>
     </form>
   )
