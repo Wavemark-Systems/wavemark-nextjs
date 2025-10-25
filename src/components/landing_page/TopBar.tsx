@@ -82,12 +82,20 @@ export default function TopBar() {
         </NavigationMenu>
       </div>
       
-      <Link 
-        href="/login"
-        className="px-3 py-2 sm:px-4 bg-black text-white border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-sm sm:text-base lg:text-lg font-medium leading-none"
-      >
-        {t.login}
-      </Link>
+      <div className="flex gap-2">
+        <Link 
+          href="/contact"
+          className="px-2 py-1.5 sm:px-3 sm:py-2 bg-black text-white border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-xs sm:text-sm font-medium leading-none"
+        >
+          {t.contact}
+        </Link>
+        <Link 
+          href="/login"
+          className="px-2 py-1.5 sm:px-3 sm:py-2 bg-white text-black border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-xs sm:text-sm font-medium leading-none"
+        >
+          {t.login}
+        </Link>
+      </div>
     </nav>
   )
 }

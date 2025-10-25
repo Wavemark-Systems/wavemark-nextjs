@@ -42,9 +42,12 @@ export default function Hero() {
               })}
             </div>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <button className="px-4 py-2 sm:px-6 sm:py-3 bg-black text-white border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-sm sm:text-base font-medium">
+              <Link 
+                href="/contact"
+                className="px-4 py-2 sm:px-6 sm:py-3 bg-black text-white border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-sm sm:text-base font-medium text-center"
+              >
                 {t.contact}
-              </button>
+              </Link>
               <Link 
                 href="/login"
                 className="px-4 py-2 sm:px-6 sm:py-3 bg-white text-black border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-sm sm:text-base font-medium text-center"

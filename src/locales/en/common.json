@@ -1,0 +1,23 @@
+{
+  "brand": "Neiom Systems",
+  "solutions": "Solutions",
+  "company": "Company",
+  "careers": "Careers",
+  "login": "Login",
+  "contact": "Contact Us",
+  "email": "Email",
+  "emailPlaceholder": "Your email address",
+  "password": "Password",
+  "passwordPlaceholder": "Your password",
+  "name": "Name",
+  "namePlaceholder": "Your name",
+  "subject": "Subject",
+  "subjectPlaceholder": "What is this about?",
+  "message": "Message",
+  "messagePlaceholder": "Your message",
+  "send": "Send Message",
+  "sending": "Sending...",
+  "aboutUs": "About us",
+  "allRightsReserved": "All rights reserved."
+}
+
