@@ -16,14 +16,31 @@ export default function Hero() {
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mb-3 sm:mb-4 text-black">
               {t.heroTitle}
             </h1>
-            <p className="text-sm sm:text-base lg:text-lg text-black leading-relaxed mb-4 sm:mb-6">
-              {t.heroDescription.split('\n').map((line, index) => (
-                <span key={index}>
-                  {line}
-                  {index < t.heroDescription.split('\n').length - 1 && <br />}
-                </span>
-              ))}
-            </p>
+            <div className="text-sm sm:text-base lg:text-lg text-black leading-relaxed mb-4 sm:mb-6">
+              {t.heroDescription.split('\n').map((line, index) => {
+                if (line.startsWith('**') && line.endsWith('**')) {
+                  return (
+                    <h3 key={index} className="font-semibold text-base sm:text-lg mb-2 mt-4">
+                      {line.replace(/\*\*/g, '')}
+                    </h3>
+                  );
+                } else if (line.startsWith('• ')) {
+                  return (
+                    <div key={index} className="ml-4 mb-1">
+                      <span className="text-black">•</span> {line.substring(2)}
+                    </div>
+                  );
+                } else if (line.trim() === '') {
+                  return <br key={index} />;
+                } else {
+                  return (
+                    <p key={index} className="mb-2">
+                      {line}
+                    </p>
+                  );
+                }
+              })}
+            </div>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <button className="px-4 py-2 sm:px-6 sm:py-3 bg-black text-white border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-sm sm:text-base font-medium">
                 {t.contact}
