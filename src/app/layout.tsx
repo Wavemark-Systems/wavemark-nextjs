@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import React from "react";
 import { Analytics } from "@vercel/analytics/react";
+import { LocaleProvider } from "@/components/LocaleProvider";
+import { getLocale } from "@/lib/locale";
 import "./globals.css";
 
 export const viewport: Viewport = {
@@ -22,17 +24,21 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+  
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body
         className="font-sans antialiased"
       >
-        {children}
+        <LocaleProvider locale={locale}>
+          {children}
+        </LocaleProvider>
         <Analytics />
       </body>
     </html>
