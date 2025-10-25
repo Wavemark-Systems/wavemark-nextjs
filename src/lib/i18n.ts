@@ -11,7 +11,7 @@ export const translations = {
     
     // Hero
     heroTitle: 'Text-to-Speech for Luxembourgish.',
-    heroDescription: 'Neiom is a state-of-the-art TTS model built specifically to handle Luxembourgish text and audio. Built by Luxembourgers, for Luxembourgers.',
+    heroDescription: 'Neiom is a state-of-the-art TTS model built specifically to handle Luxembourgish text and audio. Built for and by Luxembourgers.',
     contact: 'Contact',
     
     // Solutions
