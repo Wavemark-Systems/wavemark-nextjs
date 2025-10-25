@@ -3,7 +3,14 @@ import React from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { LocaleProvider } from "@/components/LocaleProvider";
 import { getLocale } from "@/lib/locale";
+import { Inter } from "next/font/google";
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -32,14 +39,9 @@ export default async function RootLayout({
   const locale = await getLocale();
   
   return (
-    <html lang={locale}>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-      </head>
+    <html lang={locale} className={inter.variable}>
       <body
-        className="font-sans antialiased"
+        className={`${inter.className} antialiased`}
       >
         <LocaleProvider locale={locale}>
           {children}
