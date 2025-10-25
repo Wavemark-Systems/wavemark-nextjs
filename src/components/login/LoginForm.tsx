@@ -1,8 +1,10 @@
 "use client"
 
 import { useState } from "react"
+import { useLocale } from "@/components/LocaleProvider"
 
 export default function LoginForm() {
+  const { t } = useLocale();
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [isLoading, setIsLoading] = useState(false)
@@ -22,7 +24,7 @@ export default function LoginForm() {
     <form onSubmit={handleSubmit} className="space-y-6">
       <div>
         <label htmlFor="email" className="block text-sm font-normal text-black mb-2">
-          E-Mail
+          {t.email}
         </label>
         <input
           type="email"
@@ -31,13 +33,13 @@ export default function LoginForm() {
           onChange={(e) => setEmail(e.target.value)}
           required
           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-colors"
-          placeholder="Är E-Mail Adress"
+          placeholder={t.email}
         />
       </div>
 
       <div>
         <label htmlFor="password" className="block text-sm font-normal text-black mb-2">
-          Passwuert
+          {t.password}
         </label>
         <input
           type="password"
@@ -46,7 +48,7 @@ export default function LoginForm() {
           onChange={(e) => setPassword(e.target.value)}
           required
           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition-colors"
-          placeholder="Äert Passwuert"
+          placeholder={t.password}
         />
       </div>
 
@@ -57,12 +59,12 @@ export default function LoginForm() {
             className="w-4 h-4 text-black border-gray-300 rounded focus:ring-black"
           />
           <span className="ml-2 text-sm text-gray-600">
-            Muer erënneren
+            {t.rememberMe}
           </span>
         </label>
         
         <a href="#" className="text-sm text-black underline hover:no-underline transition-all">
-          Passwuert vergiess?
+          {t.forgotPassword}
         </a>
       </div>
 
@@ -71,14 +73,14 @@ export default function LoginForm() {
         disabled={isLoading}
         className="w-full py-3 bg-black text-white border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-base font-normal disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        {isLoading ? "Umellen..." : "Umellen"}
+        {isLoading ? `${t.login}...` : t.login}
       </button>
 
       <div className="text-center">
         <p className="text-sm text-gray-600">
-          Keng Kont?{" "}
+          {t.dontHaveAccount}{" "}
           <a href="#" className="text-black underline hover:no-underline transition-all">
-            Regéiert Iech un
+            {t.signUp}
           </a>
         </p>
       </div>

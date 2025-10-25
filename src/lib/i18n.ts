@@ -35,6 +35,7 @@ export const translations = {
     // Login
     loginTitle: 'Login',
     loginSubtitle: 'Log in to access your account',
+    loginPrompt: 'Log in to access your account',
     email: 'Email',
     emailPlaceholder: 'Your email address',
     password: 'Password',
@@ -43,21 +44,26 @@ export const translations = {
     forgotPassword: 'Forgot password?',
     loggingIn: 'Logging in...',
     noAccount: "Don't have an account?",
+    dontHaveAccount: "Don't have an account?",
     signUp: 'Sign up',
     
     // 404
     notFoundTitle: 'Page not found',
+    pageNotFound: 'Page not found',
     notFoundDesc: 'The page you are looking for does not exist or is no longer available.',
     backToHome: 'Back to homepage',
+    backToHomepage: 'Back to homepage',
     
     // Pages
     companyTitle: 'Company',
     companySubtitle: 'About Neiom Systems',
+    companyPageDesc: 'Learn more about Neiom Systems, our commitment to innovation, and our mission to provide the best text-to-speech solutions for Luxembourgish. We are a team of Luxembourgers, working for Luxembourgers.',
     companyText1: 'Neiom Systems is an innovative company specializing in the development of advanced text-to-speech technologies.',
     companyText2: 'Our goal is to develop high-quality speech synthesis solutions specifically optimized for the Luxembourgish language.',
     
     careersTitle: 'Careers',
     careersSubtitle: 'Join our team!',
+    careersPageDesc: 'Are you looking for a career in an innovative field? Explore opportunities at Neiom Systems and become part of our team shaping the future of Luxembourgish voice technology.',
     careersText1: 'Become part of our team and help us shape the future of speech technology.',
     careersText2: 'We are looking for talented developers, researchers, and linguists who are passionate about innovative technologies.',
     
@@ -100,6 +106,7 @@ export const translations = {
     // Login
     loginTitle: 'Umellen',
     loginSubtitle: 'Loggt Iech an fir op Är Kont z\'accesséieren',
+    loginPrompt: 'Loggt Iech an fir op Är Kont z\'accesséieren',
     email: 'E-Mail',
     emailPlaceholder: 'Är E-Mail Adress',
     password: 'Passwuert',
@@ -108,21 +115,26 @@ export const translations = {
     forgotPassword: 'Passwuert vergiess?',
     loggingIn: 'Umellen...',
     noAccount: 'Keng Kont?',
+    dontHaveAccount: 'Keng Kont?',
     signUp: 'Regéiert Iech un',
     
     // 404
     notFoundTitle: 'Säit net fonnt',
+    pageNotFound: 'Säit net fonnt',
     notFoundDesc: 'D\'Säit déi Dir sicht gëtt et net oder ass net méi verfügbar.',
     backToHome: 'Zréck op d\'Haaptsäit',
+    backToHomepage: 'Zréck op d\'Haaptsäit',
     
     // Pages
     companyTitle: 'Firma',
     companySubtitle: 'Iwwer Neiom Systems',
+    companyPageDesc: 'Léiert méi iwwer Neiom Systems, eist Engagement fir Innovatioun an eis Missioun, déi bescht Text-zu-Sprach Léisungen fir Lëtzebuergesch ze bidden. Mir sinn eng Equipe vu Lëtzebuerger, déi fir Lëtzebuerger schaffen.',
     companyText1: 'Neiom Systems ist ein innovatives Unternehmen, das sich auf die Entwicklung fortschrittlicher Text-zu-Sprach-Technologien spezialisiert hat.',
     companyText2: 'Unser Ziel ist es, hochwertige Sprachsynthese-Lösungen zu entwickeln, die speziell für die luxemburgische Sprache optimiert sind.',
     
     careersTitle: 'Karriär',
     careersSubtitle: 'Kommt bei eis mat!',
+    careersPageDesc: 'Sicht Dir no enger Karriär an engem innovative Beräich? Entdeckt d\'Méiglechkeeten bei Neiom Systems a gitt Deel vun eiser Equipe, déi d\'Zukunft vun der Lëtzebuerger Stëmmtechnologie gestallt.',
     careersText1: 'Werden Sie Teil unseres Teams und helfen Sie uns dabei, die Zukunft der Sprachtechnologie zu gestalten.',
     careersText2: 'Wir suchen talentierte Entwickler, Forscher und Sprachwissenschaftler, die sich für innovative Technologien begeistern.',
     

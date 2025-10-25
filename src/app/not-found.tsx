@@ -1,8 +1,12 @@
+"use client"
+
 import Link from "next/link"
 import SimpleTopBar from "@/components/SimpleTopBar"
 import Footer from "@/components/landing_page/Footer"
+import { useLocale } from "@/components/LocaleProvider"
 
 export default function NotFound() {
+  const { t } = useLocale();
   return (
     <div className="min-h-screen flex flex-col">
       <SimpleTopBar />
@@ -13,13 +17,13 @@ export default function NotFound() {
             404
           </h1>
           <h2 className="text-2xl sm:text-3xl font-normal text-black mb-6">
-            Säit net fonnt
+            {t.notFoundTitle}
           </h2>
           <Link 
             href="/"
             className="text-base font-normal text-black underline hover:no-underline transition-all"
           >
-            Zréck op d&apos;Haaptsäit
+            {t.backToHome}
           </Link>
         </div>
       </div>
