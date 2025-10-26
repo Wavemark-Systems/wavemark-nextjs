@@ -12,7 +12,7 @@ export default function NotFound() {
       <SimpleTopBar />
       
       <div className="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8 min-h-[calc(100vh-160px)]">
-        <div className="max-w-md mx-auto text-center">
+        <div className="max-w-md mx-auto">
           <h1 className="text-6xl sm:text-8xl font-light text-black mb-4">
             404
           </h1>

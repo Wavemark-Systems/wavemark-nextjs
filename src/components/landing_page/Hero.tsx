@@ -9,18 +9,18 @@ export default function Hero() {
   
   return (
     <div className="px-4 sm:px-6 lg:px-8 min-h-[calc(100vh-80px)] flex items-center justify-center">
-      <div className="max-w-7xl mx-auto w-full -mt-32 sm:-mt-40 lg:-mt-48">
+      <div className="max-w-7xl mx-auto w-full -mt-16 sm:-mt-32 lg:-mt-48">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Column - Text Content */}
           <div>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight mb-3 sm:mb-4 text-black">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight mb-6 sm:mb-8 text-black">
               {t.heroTitle}
             </h1>
-            <div className="text-sm sm:text-base lg:text-lg text-black leading-relaxed mb-4 sm:mb-6">
+            <div className="text-base sm:text-lg lg:text-xl text-black leading-relaxed mb-8 sm:mb-10">
               {t.heroDescription.split('\n').map((line, index) => {
                 if (line.startsWith('**') && line.endsWith('**')) {
                   return (
-                    <h3 key={index} className="font-semibold text-base sm:text-lg mb-2 mt-4">
+                    <h3 key={index} className="font-normal text-base sm:text-lg mb-2 mt-4">
                       {line.replace(/\*\*/g, '')}
                     </h3>
                   );
@@ -41,16 +41,16 @@ export default function Hero() {
                 }
               })}
             </div>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-4">
               <Link 
                 href="/contact"
-                className="px-4 py-2 sm:px-6 sm:py-3 bg-black text-white border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-sm sm:text-base font-medium text-center"
+                className="px-6 py-4 sm:px-6 sm:py-3 bg-black text-white border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-base sm:text-base font-normal"
               >
                 {t.contact}
               </Link>
               <Link 
                 href="/login"
-                className="px-4 py-2 sm:px-6 sm:py-3 bg-white text-black border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-sm sm:text-base font-medium text-center"
+                className="px-6 py-4 sm:px-6 sm:py-3 bg-white text-black border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-base sm:text-base font-normal"
               >
                 {t.login}
               </Link>
