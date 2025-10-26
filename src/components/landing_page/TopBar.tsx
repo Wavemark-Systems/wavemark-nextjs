@@ -173,7 +173,7 @@ export default function TopBar() {
                     Discover our mission to preserve Luxembourgish language
                   </ListItem>
                   <ListItem href="/team" title="Our Team">
-                    Meet the co-founders behind Neiom Systems
+                    Meet the co-founders behind Neiom
                   </ListItem>
                 </ul>
               </NavigationMenuContent>
