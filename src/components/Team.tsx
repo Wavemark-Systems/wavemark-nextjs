@@ -31,17 +31,6 @@ export default function Team() {
                 <p className="text-gray-700 leading-relaxed mb-6">
                   {t.vivienDescription}
                 </p>
-                <div className="space-y-2">
-                  <div className="flex items-center">
-                    <span className="text-gray-600">{t.vivienSpecialty1}</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="text-gray-600">{t.vivienSpecialty2}</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="text-gray-600">{t.vivienSpecialty3}</span>
-                  </div>
-                </div>
                 <div className="mt-4">
                   <a 
                     href="https://www.linkedin.com/in/vivienhenz/" 
@@ -88,17 +77,6 @@ export default function Team() {
                 <p className="text-gray-700 leading-relaxed mb-6">
                   {t.markDescription}
                 </p>
-                <div className="space-y-2">
-                  <div className="flex items-center">
-                    <span className="text-gray-600">{t.markSpecialty1}</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="text-gray-600">{t.markSpecialty2}</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="text-gray-600">{t.markSpecialty3}</span>
-                  </div>
-                </div>
                 <div className="mt-4">
                   <a 
                     href="https://www.linkedin.com/in/mark-mcdonald/details/experience/" 

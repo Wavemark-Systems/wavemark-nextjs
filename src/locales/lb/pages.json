@@ -15,22 +15,14 @@
     "vivien": {
       "role": "CEO & Co-Grënner",
       "name": "Vivien Henz",
-      "description": "Vivien leet eis technesch Entwécklung mat Expertis a Maschinneleieren-Design, Tokenisatioun a Datenveraarbechtung. Seng déif Verstännis vun Sproochtechnologie driwwt eis Missioun un, dat natierlechst klingend Lëtzebuerger Text-zu-Sprach System ze kreéieren.",
-      "specialties": [
-        "Maschinneleieren-Design Spezialist",
-        "Tokenisatioun & Datenveraarbechtung Expert",
-        "Sproochtechnologie Leader"
-      ]
+      "description": "Physik & Informatik Student op Harvard deen gär leeft a Maschinneleieren. Ursprénglech vu Lëtzebuerg Stad, Lëtzebuerg.",
+      "specialties": []
     },
     "mark": {
-      "role": "CMO, CFO, CTO & Co-Grënner",
+      "role": "CTO & Co-Grënner",
       "name": "Mark McDonald",
-      "description": "Mark iwwerwaacht eis Geschäftsstrategie, Finanzoperatiounen a Marketing-Initiativen. Seng Expertis a Geschäftsentwécklung a linguistesche Modelltraining stellt sécher, datt eis Technologieléisungen mat de Maartbedierfnesser iwwereneestëmmen, wärend se d'Lëtzebuerger Sproocherhalung virubréngen.",
-      "specialties": [
-        "Geschäftsstrategie & Entwécklung",
-        "Finanzoperatiounen & Marketing",
-        "Linguistesche Modelltraining Spezialist"
-      ]
+      "description": "Near Eastern Languages & Civilizations Student op Harvard mat Interessen a Tech-Politik, Computerlinguistik, an auslännesche Sproochen.",
+      "specialties": []
     }
   },
   "mission": {

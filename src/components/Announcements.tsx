@@ -76,45 +76,49 @@ export default function Announcements() {
               </TabsList>
 
               <TabsContent value="features" className="mt-6">
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div className="space-y-4">
-                    <div className="flex items-start">
-                      <span className="text-gray-700">Clear, natural-sounding announcements</span>
+                <div className="bg-gray-50 p-8 rounded-lg">
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div className="space-y-4">
+                      <div className="flex items-start">
+                        <span className="text-gray-700">Clear, natural-sounding announcements</span>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="text-gray-700">Real-time text-to-speech generation</span>
+                      </div>
                     </div>
-                    <div className="flex items-start">
-                      <span className="text-gray-700">Real-time text-to-speech generation</span>
-                    </div>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="flex items-start">
-                      <span className="text-gray-700">Cost-effective solution</span>
-                    </div>
-                    <div className="flex items-start">
-                      <span className="text-gray-700">Easy integration</span>
+                    <div className="space-y-4">
+                      <div className="flex items-start">
+                        <span className="text-gray-700">Cost-effective solution</span>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="text-gray-700">Easy integration</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </TabsContent>
 
               <TabsContent value="applications" className="mt-6">
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div className="space-y-4">
-                    <div className="flex items-start">
-                      <span className="text-gray-700">Transportation hubs</span>
+                <div className="bg-gray-50 p-8 rounded-lg">
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div className="space-y-4">
+                      <div className="flex items-start">
+                        <span className="text-gray-700">Transportation hubs</span>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="text-gray-700">Shopping centers</span>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="text-gray-700">Government buildings</span>
+                      </div>
                     </div>
-                    <div className="flex items-start">
-                      <span className="text-gray-700">Shopping centers</span>
-                    </div>
-                    <div className="flex items-start">
-                      <span className="text-gray-700">Government buildings</span>
-                    </div>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="flex items-start">
-                      <span className="text-gray-700">Healthcare facilities</span>
-                    </div>
-                    <div className="flex items-start">
-                      <span className="text-gray-700">Educational institutions</span>
+                    <div className="space-y-4">
+                      <div className="flex items-start">
+                        <span className="text-gray-700">Healthcare facilities</span>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="text-gray-700">Educational institutions</span>
+                      </div>
                     </div>
                   </div>
                 </div>

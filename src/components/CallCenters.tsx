@@ -70,45 +70,49 @@ export default function CallCenters() {
               </TabsList>
 
               <TabsContent value="features" className="mt-6">
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div className="space-y-4">
-                    <div className="flex items-start">
-                      <span className="text-gray-700">Natural-sounding voice interactions</span>
+                <div className="bg-gray-50 p-8 rounded-lg">
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div className="space-y-4">
+                      <div className="flex items-start">
+                        <span className="text-gray-700">Natural-sounding voice interactions</span>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="text-gray-700">Quick response generation</span>
+                      </div>
                     </div>
-                    <div className="flex items-start">
-                      <span className="text-gray-700">Quick response generation</span>
-                    </div>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="flex items-start">
-                      <span className="text-gray-700">Cost-effective solution</span>
-                    </div>
-                    <div className="flex items-start">
-                      <span className="text-gray-700">Easy integration</span>
+                    <div className="space-y-4">
+                      <div className="flex items-start">
+                        <span className="text-gray-700">Cost-effective solution</span>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="text-gray-700">Easy integration</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </TabsContent>
 
               <TabsContent value="applications" className="mt-6">
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div className="space-y-4">
-                    <div className="flex items-start">
-                      <span className="text-gray-700">Customer support</span>
+                <div className="bg-gray-50 p-8 rounded-lg">
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div className="space-y-4">
+                      <div className="flex items-start">
+                        <span className="text-gray-700">Customer support</span>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="text-gray-700">Order processing</span>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="text-gray-700">Appointment scheduling</span>
+                      </div>
                     </div>
-                    <div className="flex items-start">
-                      <span className="text-gray-700">Order processing</span>
-                    </div>
-                    <div className="flex items-start">
-                      <span className="text-gray-700">Appointment scheduling</span>
-                    </div>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="flex items-start">
-                      <span className="text-gray-700">Technical support</span>
-                    </div>
-                    <div className="flex items-start">
-                      <span className="text-gray-700">Sales inquiries</span>
+                    <div className="space-y-4">
+                      <div className="flex items-start">
+                        <span className="text-gray-700">Technical support</span>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="text-gray-700">Sales inquiries</span>
+                      </div>
                     </div>
                   </div>
                 </div>

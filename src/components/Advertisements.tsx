@@ -68,42 +68,46 @@ export default function Advertisements() {
               </TabsList>
 
               <TabsContent value="features" className="mt-6">
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div className="space-y-4">
-                    <div className="flex items-start">
-                      <span className="text-gray-700">Natural-sounding Luxembourgish voice</span>
+                <div className="bg-gray-50 p-8 rounded-lg">
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div className="space-y-4">
+                      <div className="flex items-start">
+                        <span className="text-gray-700">Natural-sounding Luxembourgish voice</span>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="text-gray-700">Cost-effective audio production</span>
+                      </div>
                     </div>
-                    <div className="flex items-start">
-                      <span className="text-gray-700">Cost-effective audio production</span>
-                    </div>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="flex items-start">
-                      <span className="text-gray-700">Quick generation from text to audio</span>
-                    </div>
-                    <div className="flex items-start">
-                      <span className="text-gray-700">High-quality output</span>
+                    <div className="space-y-4">
+                      <div className="flex items-start">
+                        <span className="text-gray-700">Quick generation from text to audio</span>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="text-gray-700">High-quality output</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </TabsContent>
 
               <TabsContent value="applications" className="mt-6">
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div className="space-y-4">
-                    <div className="flex items-start">
-                      <span className="text-gray-700">Radio advertising</span>
+                <div className="bg-gray-50 p-8 rounded-lg">
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div className="space-y-4">
+                      <div className="flex items-start">
+                        <span className="text-gray-700">Radio advertising</span>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="text-gray-700">Social media content</span>
+                      </div>
                     </div>
-                    <div className="flex items-start">
-                      <span className="text-gray-700">Social media content</span>
-                    </div>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="flex items-start">
-                      <span className="text-gray-700">E-learning materials</span>
-                    </div>
-                    <div className="flex items-start">
-                      <span className="text-gray-700">Product descriptions</span>
+                    <div className="space-y-4">
+                      <div className="flex items-start">
+                        <span className="text-gray-700">E-learning materials</span>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="text-gray-700">Product descriptions</span>
+                      </div>
                     </div>
                   </div>
                 </div>

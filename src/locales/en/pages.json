@@ -15,22 +15,14 @@
     "vivien": {
       "role": "CEO & Co-Founder",
       "name": "Vivien Henz",
-      "description": "Vivien leads our technical development with expertise in machine learning design, tokenization, and data processing. His deep understanding of language technology drives our mission to create the most natural-sounding Luxembourgish text-to-speech system.",
-      "specialties": [
-        "Machine Learning Design Specialist",
-        "Tokenization & Data Processing Expert",
-        "Language Technology Leader"
-      ]
+      "description": "Physics & CS undergrad at Harvard who loves running and machine learning. Originally from Luxembourg City, Luxembourg.",
+      "specialties": []
     },
     "mark": {
-      "role": "CMO, CFO, CTO & Co-Founder",
+      "role": "CTO & Co-Founder",
       "name": "Mark McDonald",
-      "description": "Mark oversees our business strategy, financial operations, and marketing initiatives. His expertise in business development and linguistic model training ensures our technology solutions align with market needs while advancing Luxembourgish language preservation.",
-      "specialties": [
-        "Business Strategy & Development",
-        "Financial Operations & Marketing",
-        "Linguistic Model Training Specialist"
-      ]
+      "description": "Near Eastern Languages & Civilizations Undergrad at Harvard with interests in tech policy, computational linguistics, and foreign languages.",
+      "specialties": []
     }
   },
   "mission": {
