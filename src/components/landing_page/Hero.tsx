@@ -9,7 +9,7 @@ export default function Hero() {
   
   return (
     <div className="px-4 sm:px-6 lg:px-8 min-h-[calc(100vh-80px)] flex items-center justify-center">
-      <div className="max-w-7xl mx-auto w-full -mt-16 sm:-mt-32 lg:-mt-48">
+      <div className="max-w-7xl mx-auto w-full -mt-8 sm:-mt-32 lg:-mt-48">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Column - Text Content */}
           <div>

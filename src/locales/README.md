@@ -1,6 +1,6 @@
 # Localization System
 
-This directory contains all translation files for the Neiom Systems application.
+This directory contains all translation files for the Neiom application.
 
 ## Structure
 
@@ -61,7 +61,7 @@ If the translation fits into an existing category, add it to the appropriate JSO
 ```json
 // locales/en/common.json
 {
-  "brand": "Neiom Systems",
+  "brand": "Neiom",
   "newKey": "New Translation"  // Add here
 }
 ```
