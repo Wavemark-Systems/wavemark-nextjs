@@ -22,38 +22,38 @@ export default function Announcements() {
         {/* Interactive Information Cards */}
         <div className="mb-8 sm:mb-16">
           <h2 className="text-xl sm:text-2xl font-normal text-black mb-6 sm:mb-8">
-            Announcement Solutions
+            {t.announcementSolutions}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {/* Transportation Hub Card */}
             <div className="p-6">
-              <h3 className="text-lg font-normal text-black mb-3">Transportation</h3>
+              <h3 className="text-lg font-normal text-black mb-3">{t.transportation}</h3>
               <p className="text-gray-600 text-sm">
-                Clear announcements for train stations, airports, and bus terminals with professional audio quality.
+                {t.transportationDesc}
               </p>
             </div>
 
             {/* Shopping Center Card */}
             <div className="p-6">
-              <h3 className="text-lg font-normal text-black mb-3">Retail</h3>
+              <h3 className="text-lg font-normal text-black mb-3">{t.retail}</h3>
               <p className="text-gray-600 text-sm">
-                Automated announcements for shopping centers, stores, and retail environments.
+                {t.retailDesc}
               </p>
             </div>
 
             {/* Healthcare Card */}
             <div className="p-6">
-              <h3 className="text-lg font-normal text-black mb-3">Healthcare</h3>
+              <h3 className="text-lg font-normal text-black mb-3">{t.healthcare}</h3>
               <p className="text-gray-600 text-sm">
-                Professional announcements for hospitals, clinics, and healthcare facilities.
+                {t.healthcareDesc}
               </p>
             </div>
 
             {/* Education Card */}
             <div className="p-6">
-              <h3 className="text-lg font-normal text-black mb-3">Education</h3>
+              <h3 className="text-lg font-normal text-black mb-3">{t.education}</h3>
               <p className="text-gray-600 text-sm">
-                School announcements, class schedules, and emergency notifications in Luxembourgish.
+                {t.educationDesc}
               </p>
             </div>
           </div>

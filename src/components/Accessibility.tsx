@@ -24,34 +24,31 @@ export default function Accessibility() {
           {/* EU Compliance Section */}
           <section className="mb-8 sm:mb-16">
             <h2 className="text-xl sm:text-2xl font-normal text-black mb-4 sm:mb-6">
-              EU Accessibility Compliance
+              {t.euComplianceTitle}
             </h2>
             <div className="space-y-4">
               <p className="text-gray-700 leading-relaxed">
-                Our Luxembourgish text-to-speech technology helps websites comply with the{" "}
+                {t.euComplianceDescription}{" "}
                 <a 
                   href="https://eur-lex.europa.eu/eli/dir/2019/882/oj/eng" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-black hover:text-gray-600 underline font-normal"
                 >
-                  EU Accessibility Directive (2019/882)
+                  {t.euDirectiveLink}
                 </a>
-                , which requires accessible alternatives for visual content across all EU languages.
+                {t.euComplianceDescription2}
               </p>
               <p className="text-gray-700 leading-relaxed">
-                For under-served languages like Luxembourgish, providing text-to-speech alternatives for 
-                written content is crucial for ensuring equal access to digital information. 
-                Our technology enables websites to automatically generate natural-sounding Luxembourgish 
-                audio from text content, meeting EU accessibility standards while preserving linguistic diversity.
+                {t.underServedLanguages}
               </p>
               <div className="mt-6">
-                <h3 className="text-lg font-normal text-black mb-2">Key Benefits for EU Compliance:</h3>
+                <h3 className="text-lg font-normal text-black mb-2">{t.keyBenefitsTitle}</h3>
                 <ul className="space-y-1 text-gray-700">
-                  <li>• Automatic text-to-speech generation in Luxembourgish</li>
-                  <li>• Compliance with EU accessibility requirements</li>
-                  <li>• Support for under-represented EU languages</li>
-                  <li>• Cost-effective solution for small language communities</li>
+                  <li>• {t.benefit1}</li>
+                  <li>• {t.benefit2}</li>
+                  <li>• {t.benefit3}</li>
+                  <li>• {t.benefit4}</li>
                 </ul>
               </div>
             </div>
@@ -66,9 +63,9 @@ export default function Accessibility() {
             {/* Shadcn Tabs */}
             <Tabs defaultValue="benefits" className="w-full">
               <TabsList className="grid w-full grid-cols-3">
-                <TabsTrigger value="benefits">Key Benefits</TabsTrigger>
-                <TabsTrigger value="users">Target Users</TabsTrigger>
-                <TabsTrigger value="tech">Technical Specs</TabsTrigger>
+                <TabsTrigger value="benefits">{t.keyFeatures}</TabsTrigger>
+                <TabsTrigger value="users">{t.targetUsers}</TabsTrigger>
+                <TabsTrigger value="tech">{t.technicalSpecs}</TabsTrigger>
               </TabsList>
 
               <TabsContent value="benefits" className="mt-6">

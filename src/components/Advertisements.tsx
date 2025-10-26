@@ -22,30 +22,30 @@ export default function Advertisements() {
         {/* Interactive Information Cards */}
         <div className="mb-8 sm:mb-16">
           <h2 className="text-xl sm:text-2xl font-normal text-black mb-6 sm:mb-8">
-            Advertising Solutions
+            {t.advertisingSolutions}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {/* Radio Advertising Card */}
             <div className="p-6">
-              <h3 className="text-lg font-normal text-black mb-3">Radio Advertising</h3>
+              <h3 className="text-lg font-normal text-black mb-3">{t.radioAdvertising}</h3>
               <p className="text-gray-600 text-sm">
-                Generate high-quality Luxembourgish audio for radio spots with natural pronunciation and professional sound quality.
+                {t.radioAdvertisingDesc}
               </p>
             </div>
 
             {/* Social Media Card */}
             <div className="p-6">
-              <h3 className="text-lg font-normal text-black mb-3">Social Media</h3>
+              <h3 className="text-lg font-normal text-black mb-3">{t.socialMedia}</h3>
               <p className="text-gray-600 text-sm">
-                Create engaging audio content for social media platforms with instant text-to-speech conversion.
+                {t.socialMediaDesc}
               </p>
             </div>
 
             {/* Product Demo Card */}
             <div className="p-6">
-              <h3 className="text-lg font-normal text-black mb-3">Product Demos</h3>
+              <h3 className="text-lg font-normal text-black mb-3">{t.productDemos}</h3>
               <p className="text-gray-600 text-sm">
-                Produce professional product demonstration audio with consistent voice characteristics and clear pronunciation.
+                {t.productDemosDesc}
               </p>
             </div>
           </div>

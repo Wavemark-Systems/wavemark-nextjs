@@ -22,7 +22,7 @@ export default function CallCenters() {
         {/* Interactive Information Card */}
         <div className="mb-8 sm:mb-16">
           <h2 className="text-xl sm:text-2xl font-normal text-black mb-6 sm:mb-8">
-            Call Center Solutions
+            {t.callCenterSolutions}
           </h2>
           <div className="max-w-4xl mx-auto">
             {/* Customer Support Card */}

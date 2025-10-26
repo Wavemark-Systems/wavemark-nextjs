@@ -1,6 +1,8 @@
 "use client"
 
 import { useLocale } from "@/components/LocaleProvider"
+import { LinkedInLogoIcon } from "@radix-ui/react-icons"
+import Image from "next/image"
 
 export default function Team() {
   const { t } = useLocale();
@@ -11,10 +13,10 @@ export default function Team() {
         {/* Header Section */}
         <div className="mb-8 sm:mb-16">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light text-black mb-4 sm:mb-6 tracking-tight">
-            Our Team
+            {t.teamTitle}
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl leading-relaxed">
-            Meet the co-founders behind Neiom Systems, passionate about preserving and promoting the Luxembourgish language through innovative technology.
+            {t.teamSubtitle}
           </p>
         </div>
 
@@ -24,28 +26,43 @@ export default function Team() {
           <section className="bg-gray-50 p-8 rounded-lg">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl font-normal text-black mb-4">CEO & Co-Founder</h2>
-                <h3 className="text-xl font-normal text-black mb-4">Vivien Henz</h3>
+                <h2 className="text-2xl font-normal text-black mb-4">{t.vivienRole}</h2>
+                <h3 className="text-xl font-normal text-black mb-4">{t.vivienName}</h3>
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  Vivien leads our technical development with expertise in machine learning design, 
-                  tokenization, and data processing. His deep understanding of language technology 
-                  drives our mission to create the most natural-sounding Luxembourgish text-to-speech system.
+                  {t.vivienDescription}
                 </p>
                 <div className="space-y-2">
                   <div className="flex items-center">
-                    <span className="text-gray-600">Machine Learning Design Specialist</span>
+                    <span className="text-gray-600">{t.vivienSpecialty1}</span>
                   </div>
                   <div className="flex items-center">
-                    <span className="text-gray-600">Tokenization & Data Processing Expert</span>
+                    <span className="text-gray-600">{t.vivienSpecialty2}</span>
                   </div>
                   <div className="flex items-center">
-                    <span className="text-gray-600">Language Technology Leader</span>
+                    <span className="text-gray-600">{t.vivienSpecialty3}</span>
                   </div>
+                </div>
+                <div className="mt-4">
+                  <a 
+                    href="https://www.linkedin.com/in/vivienhenz/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-4 py-2 border border-black text-black hover:bg-black hover:text-white transition-all duration-200 font-normal rounded-lg hover:scale-105 transform"
+                  >
+                    <LinkedInLogoIcon className="w-4 h-4 mr-2" />
+                    LinkedIn
+                  </a>
                 </div>
               </div>
               <div className="flex justify-center">
-                <div className="w-48 h-48 bg-gray-200 rounded-full flex items-center justify-center">
-                  <span className="text-gray-500 text-lg">Photo Coming Soon</span>
+                <div className="w-48 h-48 rounded-full overflow-hidden">
+                  <Image 
+                    src="/viv.jpeg" 
+                    alt="Vivien Henz" 
+                    width={192}
+                    height={192}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>
@@ -55,28 +72,43 @@ export default function Team() {
           <section className="bg-gray-50 p-8 rounded-lg">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="flex justify-center md:order-first">
-                <div className="w-48 h-48 bg-gray-200 rounded-full flex items-center justify-center">
-                  <span className="text-gray-500 text-lg">Photo Coming Soon</span>
+                <div className="w-48 h-48 rounded-full overflow-hidden">
+                  <Image 
+                    src="/mark.jpeg" 
+                    alt="Mark McDonald" 
+                    width={192}
+                    height={192}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
               <div>
-                <h2 className="text-2xl font-normal text-black mb-4">CMO, CFO & Co-Founder</h2>
-                <h3 className="text-xl font-normal text-black mb-4">Mark McDonald</h3>
+                <h2 className="text-2xl font-normal text-black mb-4">{t.markRole}</h2>
+                <h3 className="text-xl font-normal text-black mb-4">{t.markName}</h3>
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  Mark oversees our business strategy, financial operations, and marketing initiatives. 
-                  His expertise in business development and linguistic model training ensures our 
-                  technology solutions align with market needs while advancing Luxembourgish language preservation.
+                  {t.markDescription}
                 </p>
                 <div className="space-y-2">
                   <div className="flex items-center">
-                    <span className="text-gray-600">Business Strategy & Development</span>
+                    <span className="text-gray-600">{t.markSpecialty1}</span>
                   </div>
                   <div className="flex items-center">
-                    <span className="text-gray-600">Financial Operations & Marketing</span>
+                    <span className="text-gray-600">{t.markSpecialty2}</span>
                   </div>
                   <div className="flex items-center">
-                    <span className="text-gray-600">Linguistic Model Training Specialist</span>
+                    <span className="text-gray-600">{t.markSpecialty3}</span>
                   </div>
+                </div>
+                <div className="mt-4">
+                  <a 
+                    href="https://www.linkedin.com/in/mark-mcdonald/details/experience/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-4 py-2 border border-black text-black hover:bg-black hover:text-white transition-all duration-200 font-normal rounded-lg hover:scale-105 transform"
+                  >
+                    <LinkedInLogoIcon className="w-4 h-4 mr-2" />
+                    LinkedIn
+                  </a>
                 </div>
               </div>
             </div>

@@ -24,17 +24,16 @@ export default function Careers() {
           <section className="border-t border-gray-200 pt-12">
             <div>
               <h2 className="text-2xl font-normal text-black mb-4">
-                Interested in Joining Us?
+                {t.interestedInJoiningUs}
               </h2>
               <p className="text-gray-600 mb-6 max-w-2xl">
-              While we&apos;re building our careers section, feel free to reach out to us directly 
-              to learn about current opportunities.
+                {t.whileBuildingCareers}
               </p>
               <a 
                 href="/contact"
                 className="inline-block px-8 py-3 border border-black text-black hover:bg-black hover:text-white transition-all duration-200 font-normal rounded-lg hover:scale-105 transform"
               >
-                Contact Us
+                {t.contactUs}
               </a>
             </div>
           </section>

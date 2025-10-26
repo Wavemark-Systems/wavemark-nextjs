@@ -12,40 +12,40 @@ export default function Mission() {
         {/* Header Section */}
         <div className="mb-8 sm:mb-16">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light text-black mb-4 sm:mb-6 tracking-tight">
-            Our Mission
+            {t.missionTitle}
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl leading-relaxed">
-            {t.companySubtitle}
+            {t.missionSubtitle}
           </p>
         </div>
 
         {/* Interactive Information Cards */}
         <div className="mb-8 sm:mb-16">
           <h2 className="text-xl sm:text-2xl font-normal text-black mb-6 sm:mb-8">
-            About Neiom Systems
+            {t.aboutNeiomSystems}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {/* Mission Card */}
             <div className="p-6">
-              <h3 className="text-lg font-normal text-black mb-3">Our Mission</h3>
+              <h3 className="text-lg font-normal text-black mb-3">{t.ourMission}</h3>
               <p className="text-gray-600 text-sm">
-                Make Luxembourgish content accessible through high-quality voice synthesis technology.
+                {t.missionDescription}
               </p>
             </div>
 
             {/* Technology Card */}
             <div className="p-6">
-              <h3 className="text-lg font-normal text-black mb-3">Our Technology</h3>
+              <h3 className="text-lg font-normal text-black mb-3">{t.ourTechnology}</h3>
               <p className="text-gray-600 text-sm">
-                Advanced text-to-speech system designed specifically for the Luxembourgish language.
+                {t.technologyDescription}
               </p>
             </div>
 
             {/* Impact Card */}
             <div className="p-6">
-              <h3 className="text-lg font-normal text-black mb-3">Our Impact</h3>
+              <h3 className="text-lg font-normal text-black mb-3">{t.ourImpact}</h3>
               <p className="text-gray-600 text-sm">
-                Preserving and promoting Luxembourgish language through innovative technology solutions.
+                {t.impactDescription}
               </p>
             </div>
           </div>
@@ -60,12 +60,12 @@ export default function Mission() {
             </h2>
             
             {/* Shadcn Tabs */}
-            <Tabs defaultValue="mission" className="w-full">
-              <TabsList className="grid w-full grid-cols-3">
-                <TabsTrigger value="mission">Mission & Vision</TabsTrigger>
-                <TabsTrigger value="technology">Technology</TabsTrigger>
-                <TabsTrigger value="contact">Contact</TabsTrigger>
-              </TabsList>
+        <Tabs defaultValue="mission" className="w-full">
+          <TabsList className="grid w-full grid-cols-3">
+            <TabsTrigger value="mission">{t.missionVision}</TabsTrigger>
+            <TabsTrigger value="technology">{t.technology}</TabsTrigger>
+            <TabsTrigger value="contact">{t.contact}</TabsTrigger>
+          </TabsList>
 
               <TabsContent value="mission" className="mt-6">
                 <div className="bg-gray-50 p-8 rounded-lg">

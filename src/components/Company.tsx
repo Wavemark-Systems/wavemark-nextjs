@@ -21,20 +21,20 @@ export default function Company() {
         {/* Quick Stats */}
         <div className="bg-black text-white rounded-2xl p-6 sm:p-12">
           <h2 className="text-xl sm:text-2xl font-normal mb-6 sm:mb-8 text-center">
-            At a Glance
+            {t.atAGlance}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
             <div className="text-center">
               <div className="text-4xl font-normal mb-2">100%</div>
-              <div className="text-gray-300">Luxembourgish Native</div>
+              <div className="text-gray-300">{t.luxembourgishNative}</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-normal mb-2">24/7</div>
-              <div className="text-gray-300">Available</div>
+              <div className="text-gray-300">{t.available}</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-normal mb-2">∞</div>
-              <div className="text-gray-300">Possibilities</div>
+              <div className="text-gray-300">{t.possibilities}</div>
             </div>
           </div>
         </div>
