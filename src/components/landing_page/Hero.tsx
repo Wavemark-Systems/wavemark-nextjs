@@ -8,8 +8,8 @@ export default function Hero() {
   const { t } = useLocale();
   
   return (
-    <div className="px-4 sm:px-6 lg:px-8 min-h-[calc(100vh-80px)] flex items-center justify-center">
-      <div className="max-w-7xl mx-auto w-full -mt-8 sm:-mt-32 lg:-mt-48">
+    <div className="px-4 sm:px-6 lg:px-8 pt-12 sm:pt-0 min-h-[calc(100vh-80px)] flex items-center justify-center">
+      <div className="max-w-7xl mx-auto w-full mt-0 sm:-mt-32 lg:-mt-48">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Column - Text Content */}
           <div>
@@ -41,16 +41,16 @@ export default function Hero() {
                 }
               })}
             </div>
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link 
                 href="/contact"
-                className="px-6 py-4 sm:px-6 sm:py-3 bg-black text-white border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-base sm:text-base font-normal"
+                className="w-full sm:w-auto text-center px-6 py-3 sm:px-6 sm:py-3 bg-black text-white border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-base sm:text-base font-normal"
               >
                 {t.contact}
               </Link>
               <Link 
                 href="/login"
-                className="px-6 py-4 sm:px-6 sm:py-3 bg-white text-black border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-base sm:text-base font-normal"
+                className="w-full sm:w-auto text-center px-6 py-3 sm:px-6 sm:py-3 bg-white text-black border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-base sm:text-base font-normal"
               >
                 {t.login}
               </Link>
