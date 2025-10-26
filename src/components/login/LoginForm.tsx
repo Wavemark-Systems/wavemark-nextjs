@@ -76,7 +76,11 @@ export default function LoginForm() {
         {isLoading ? `${t.login}...` : t.login}
       </button>
 
-      <div>
+      <div className="text-center text-sm text-gray-600">
+        {t.dontHaveAccount}{" "}
+        <a href="/contact" className="text-black underline hover:no-underline transition-all">
+          {t.contactUs}
+        </a>
       </div>
     </form>
   )

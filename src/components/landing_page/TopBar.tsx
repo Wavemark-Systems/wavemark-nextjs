@@ -38,13 +38,15 @@ export default function TopBar() {
   const isMobile = useIsMobile()
   const { t } = useLocale()
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+  const [solutionsOpen, setSolutionsOpen] = React.useState(false)
+  const [companyOpen, setCompanyOpen] = React.useState(false)
 
   if (isMobile) {
     return (
-      <nav className="w-full px-4 py-4 bg-white border-b border-gray-200">
+      <nav className="w-full px-4 sm:px-6 py-4 bg-white border-b border-gray-200">
         {/* Mobile Header */}
         <div className="flex justify-between items-center">
-          <Link href="/" className="text-xl font-normal text-black hover:underline transition-all">
+          <Link href="/" className="text-lg sm:text-xl font-normal text-black hover:underline transition-all">
             {t.brand}
           </Link>
           
@@ -70,60 +72,103 @@ export default function TopBar() {
             <div className="space-y-4">
               {/* Solutions Dropdown */}
               <div>
-                <button className="flex items-center justify-between w-full text-left py-2 text-base font-normal text-black">
+                <button 
+                  onClick={() => setSolutionsOpen(!solutionsOpen)}
+                  className="flex items-center justify-between w-full text-left py-2 text-base font-normal text-black"
+                >
                   {t.solutions}
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg 
+                    className={`w-4 h-4 transition-transform ${solutionsOpen ? 'rotate-180' : ''}`} 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
-                <div className="ml-4 mt-2 space-y-2">
-                  <Link href="/solutions/advertisements" className="block py-2 text-sm text-gray-600 hover:text-black transition-colors">
-                    {t.advertisements}
-                  </Link>
-                  <Link href="/solutions/accessibility" className="block py-2 text-sm text-gray-600 hover:text-black transition-colors">
-                    {t.accessibility}
-                  </Link>
-                  <Link href="/solutions/announcements" className="block py-2 text-sm text-gray-600 hover:text-black transition-colors">
-                    {t.announcements}
-                  </Link>
-                  <Link href="/solutions/call-centers" className="block py-2 text-sm text-gray-600 hover:text-black transition-colors">
-                    {t.callCenters}
-                  </Link>
-                </div>
+                {solutionsOpen && (
+                  <div className="ml-4 mt-2 space-y-2">
+                    <Link 
+                      href="/solutions/advertisements" 
+                      className="block py-2 text-sm text-gray-600 hover:text-black transition-colors"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {t.advertisements}
+                    </Link>
+                    <Link 
+                      href="/solutions/accessibility" 
+                      className="block py-2 text-sm text-gray-600 hover:text-black transition-colors"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {t.accessibility}
+                    </Link>
+                    <Link 
+                      href="/solutions/announcements" 
+                      className="block py-2 text-sm text-gray-600 hover:text-black transition-colors"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {t.announcements}
+                    </Link>
+                    <Link 
+                      href="/solutions/call-centers" 
+                      className="block py-2 text-sm text-gray-600 hover:text-black transition-colors"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {t.callCenters}
+                    </Link>
+                  </div>
+                )}
               </div>
 
               {/* Company Dropdown */}
               <div>
-                <button className="flex items-center justify-between w-full text-left py-2 text-base font-normal text-black">
+                <button 
+                  onClick={() => setCompanyOpen(!companyOpen)}
+                  className="flex items-center justify-between w-full text-left py-2 text-base font-normal text-black"
+                >
                   {t.company}
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg 
+                    className={`w-4 h-4 transition-transform ${companyOpen ? 'rotate-180' : ''}`} 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
-                <div className="ml-4 mt-2 space-y-2">
-                  <Link href="/mission" className="block py-2 text-sm text-gray-600 hover:text-black transition-colors">
-                    Our Mission
-                  </Link>
-                  <Link href="/team" className="block py-2 text-sm text-gray-600 hover:text-black transition-colors">
-                    Our Team
-                  </Link>
-                </div>
+                {companyOpen && (
+                  <div className="ml-4 mt-2 space-y-2">
+                    <Link 
+                      href="/company" 
+                      className="block py-2 text-sm text-gray-600 hover:text-black transition-colors"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {t.aboutUs}
+                    </Link>
+                    <Link 
+                      href="/careers" 
+                      className="block py-2 text-sm text-gray-600 hover:text-black transition-colors"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {t.careers}
+                    </Link>
+                  </div>
+                )}
               </div>
-              <Link href="/careers" className="block py-2 text-base font-normal text-black hover:text-gray-600 transition-colors">
-                {t.careers}
-              </Link>
 
               {/* Action Buttons */}
               <div className="pt-4 space-y-3">
                 <Link 
                   href="/contact"
-                  className="block w-full px-4 py-3 bg-black text-white border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-sm font-normal"
+                  className="block w-full px-4 py-3 bg-black text-white text-center border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-sm font-normal"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   {t.contact}
                 </Link>
                 <Link 
                   href="/login"
-                  className="block w-full px-4 py-3 bg-white text-black border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-sm font-normal"
+                  className="block w-full px-4 py-3 bg-white text-black text-center border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-sm font-normal"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   {t.login}
                 </Link>
