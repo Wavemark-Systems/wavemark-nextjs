@@ -21,31 +21,31 @@ export default function CallCenters() {
 
         {/* Interactive Information Card */}
         <div className="mb-8 sm:mb-16">
-          <h2 className="text-xl sm:text-2xl font-medium text-black mb-6 sm:mb-8 text-center">
+          <h2 className="text-xl sm:text-2xl font-normal text-black mb-6 sm:mb-8">
             Call Center Solutions
           </h2>
           <div className="max-w-4xl mx-auto">
             {/* Customer Support Card */}
-            <div className="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg transition-shadow duration-200 cursor-pointer">
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-semibold text-black mb-4">Customer Support</h3>
+            <div className="p-8">
+              <div className="mb-6">
+                <h3 className="text-2xl font-normal text-black mb-4">Customer Support</h3>
               </div>
-              <p className="text-gray-600 text-lg mb-6 text-center max-w-3xl mx-auto">
+              <p className="text-gray-600 text-lg mb-6 max-w-3xl">
                 Transform your customer support with natural-sounding Luxembourgish voice responses. 
                 Our advanced text-to-speech technology delivers instant, accurate responses to customer inquiries, 
                 support requests, and general questions with professional voice quality and clear pronunciation.
               </p>
               <div className="grid md:grid-cols-3 gap-6 mt-8">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-black mb-2">Instant</div>
+                <div>
+                  <div className="text-2xl font-normal text-black mb-2">Instant</div>
                   <div className="text-sm text-gray-600">Response Time</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-black mb-2">95%+</div>
+                <div>
+                  <div className="text-2xl font-normal text-black mb-2">95%+</div>
                   <div className="text-sm text-gray-600">Accuracy Rate</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-black mb-2">24/7</div>
+                <div>
+                  <div className="text-2xl font-normal text-black mb-2">24/7</div>
                   <div className="text-sm text-gray-600">Availability</div>
                 </div>
               </div>
@@ -57,7 +57,7 @@ export default function CallCenters() {
         <div className="space-y-16">
           {/* Interactive Tabs Section */}
           <section>
-            <h2 className="text-xl sm:text-2xl font-medium text-black mb-6 sm:mb-8 border-b border-gray-200 pb-2">
+            <h2 className="text-xl sm:text-2xl font-normal text-black mb-6 sm:mb-8 border-b border-gray-200 pb-2">
               Details
             </h2>
             
@@ -118,7 +118,7 @@ export default function CallCenters() {
                 <div className="bg-gray-50 p-8 rounded-lg">
                   <div className="grid md:grid-cols-2 gap-8">
                     <div>
-                      <h3 className="text-lg font-medium text-black mb-4">Voice Quality</h3>
+                      <h3 className="text-lg font-normal text-black mb-4">Voice Quality</h3>
                       <ul className="space-y-2 text-gray-700">
                         <li>• Natural-sounding Luxembourgish pronunciation</li>
                         <li>• Professional voice characteristics</li>
@@ -126,7 +126,7 @@ export default function CallCenters() {
                       </ul>
                     </div>
                     <div>
-                      <h3 className="text-lg font-medium text-black mb-4">Integration</h3>
+                      <h3 className="text-lg font-normal text-black mb-4">Integration</h3>
                       <ul className="space-y-2 text-gray-700">
                         <li>• Real-time voice synthesis</li>
                         <li>• API-based integration</li>
@@ -137,27 +137,6 @@ export default function CallCenters() {
                 </div>
               </TabsContent>
             </Tabs>
-          </section>
-
-          {/* Interactive Stats Section */}
-          <section className="bg-black text-white rounded-2xl p-6 sm:p-12">
-            <h2 className="text-xl sm:text-2xl font-medium mb-6 sm:mb-8 text-center">
-              Call Center Impact
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
-              <div className="text-center">
-                <div className="text-4xl font-bold mb-2">50%</div>
-                <div className="text-gray-300">Faster Response Time</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold mb-2">85%</div>
-                <div className="text-gray-300">Customer Satisfaction</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold mb-2">100%</div>
-                <div className="text-gray-300">Luxembourgish Native</div>
-              </div>
-            </div>
           </section>
 
         </div>

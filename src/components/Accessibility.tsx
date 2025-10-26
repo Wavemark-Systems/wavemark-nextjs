@@ -19,45 +19,47 @@ export default function Accessibility() {
           </p>
         </div>
 
-        {/* Interactive Demo Section */}
-        <div className="mb-8 sm:mb-16 bg-gray-50 rounded-2xl p-4 sm:p-8 border border-gray-100">
-          <h2 className="text-xl sm:text-2xl font-medium text-black mb-4 sm:mb-6 text-center">
-            Try Our Accessibility Demo
-          </h2>
-          <div className="max-w-2xl mx-auto">
-            {/* Work in Progress Banner */}
-            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
-              <div className="flex items-center justify-center">
-                <span className="text-yellow-800 font-medium">Work in Progress</span>
-              </div>
-              <p className="text-yellow-700 text-sm text-center mt-2">
-                We&apos;re actively developing this feature. Stay tuned for updates!
-              </p>
-            </div>
-            
-            <div className="bg-white rounded-lg p-6 border border-gray-200 mb-6">
-              <textarea 
-                placeholder="Type some Luxembourgish text here to see how it would sound..."
-                className="w-full h-24 p-4 border border-gray-200 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-gray-300 transition-all duration-200"
-                disabled
-              />
-            </div>
-            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
-              <button className="px-6 py-3 bg-gray-400 text-white rounded-lg cursor-not-allowed font-medium" disabled>
-                Play Audio
-              </button>
-              <button className="px-6 py-3 border border-gray-300 text-gray-400 rounded-lg cursor-not-allowed font-medium" disabled>
-                Download
-              </button>
-            </div>
-          </div>
-        </div>
-
         {/* Main Content */}
         <div className="space-y-16">
+          {/* EU Compliance Section */}
+          <section className="mb-8 sm:mb-16">
+            <h2 className="text-xl sm:text-2xl font-normal text-black mb-4 sm:mb-6">
+              EU Accessibility Compliance
+            </h2>
+            <div className="space-y-4">
+              <p className="text-gray-700 leading-relaxed">
+                Our Luxembourgish text-to-speech technology helps websites comply with the{" "}
+                <a 
+                  href="https://eur-lex.europa.eu/eli/dir/2019/882/oj/eng" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-black hover:text-gray-600 underline font-normal"
+                >
+                  EU Accessibility Directive (2019/882)
+                </a>
+                , which requires accessible alternatives for visual content across all EU languages.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                For under-served languages like Luxembourgish, providing text-to-speech alternatives for 
+                written content is crucial for ensuring equal access to digital information. 
+                Our technology enables websites to automatically generate natural-sounding Luxembourgish 
+                audio from text content, meeting EU accessibility standards while preserving linguistic diversity.
+              </p>
+              <div className="mt-6">
+                <h3 className="text-lg font-normal text-black mb-2">Key Benefits for EU Compliance:</h3>
+                <ul className="space-y-1 text-gray-700">
+                  <li>• Automatic text-to-speech generation in Luxembourgish</li>
+                  <li>• Compliance with EU accessibility requirements</li>
+                  <li>• Support for under-represented EU languages</li>
+                  <li>• Cost-effective solution for small language communities</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
           {/* Interactive Tabs Section */}
           <section>
-            <h2 className="text-2xl font-medium text-black mb-8 border-b border-gray-200 pb-2">
+            <h2 className="text-2xl font-normal text-black mb-8 border-b border-gray-200 pb-2">
               Features & Benefits
             </h2>
             
@@ -70,42 +72,43 @@ export default function Accessibility() {
               </TabsList>
 
               <TabsContent value="benefits" className="mt-6">
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div className="space-y-4">
-                    <div className="flex items-start">
-                      <span className="text-gray-700">WCAG compliance support</span>
+                <div className="bg-gray-50 p-8 rounded-lg">
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div className="space-y-4">
+                      <div className="flex items-start">
+                        <span className="text-gray-700">WCAG compliance support</span>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="text-gray-700">Cost-effective audio generation</span>
+                      </div>
                     </div>
-                    <div className="flex items-start">
-                      <span className="text-gray-700">Cost-effective audio generation</span>
-                    </div>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="flex items-start">
-                      <span className="text-gray-700">Natural-sounding Luxembourgish voice</span>
-                    </div>
-                    <div className="flex items-start">
-                      <span className="text-gray-700">Easy integration</span>
+                    <div className="space-y-4">
+                      <div className="flex items-start">
+                        <span className="text-gray-700">Natural-sounding Luxembourgish voice</span>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="text-gray-700">Easy integration</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </TabsContent>
 
               <TabsContent value="users" className="mt-6">
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div className="space-y-4">
-                    <div className="flex items-start">
-                      <span className="text-gray-700">Visually impaired users</span>
+                <div className="bg-gray-50 p-8 rounded-lg">
+                  <div className="grid md:grid-cols-2 gap-8">
+                    <div className="space-y-4">
+                      <div className="flex items-start">
+                        <span className="text-gray-700">Visually impaired users</span>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="text-gray-700">Users with reading difficulties</span>
+                      </div>
                     </div>
-                    <div className="flex items-start">
-                      <span className="text-gray-700">Users with reading difficulties</span>
-                    </div>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="flex items-start">
-                      <span className="text-gray-700">Language learners</span>
-                    </div>
-                    <div className="flex items-start">
-                      <span className="text-gray-700">Mobile users</span>
+                    <div className="space-y-4">
+                      <div className="flex items-start">
+                        <span className="text-gray-700">Language learners</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -115,7 +118,7 @@ export default function Accessibility() {
                 <div className="bg-gray-50 p-8 rounded-lg">
                   <div className="grid md:grid-cols-2 gap-8">
                     <div>
-                      <h3 className="text-lg font-medium text-black mb-4">Voice Quality</h3>
+                      <h3 className="text-lg font-normal text-black mb-4">Voice Quality</h3>
                       <ul className="space-y-2 text-gray-700">
                         <li>• Natural-sounding Luxembourgish pronunciation</li>
                         <li>• High-quality audio output</li>
@@ -123,9 +126,8 @@ export default function Accessibility() {
                       </ul>
                     </div>
                     <div>
-                      <h3 className="text-lg font-medium text-black mb-4">Integration</h3>
+                      <h3 className="text-lg font-normal text-black mb-4">Integration</h3>
                       <ul className="space-y-2 text-gray-700">
-                        <li>• API-based integration</li>
                         <li>• Real-time processing</li>
                         <li>• Scalable architecture</li>
                       </ul>
@@ -138,20 +140,20 @@ export default function Accessibility() {
 
           {/* Interactive Stats Section */}
           <section className="bg-black text-white rounded-2xl p-6 sm:p-12">
-            <h2 className="text-xl sm:text-2xl font-medium mb-6 sm:mb-8 text-center">
+            <h2 className="text-xl sm:text-2xl font-normal mb-6 sm:mb-8">
               Accessibility Impact
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
-              <div className="text-center">
-                <div className="text-4xl font-bold mb-2">95%</div>
+              <div>
+                <div className="text-4xl font-normal mb-2">95%</div>
                 <div className="text-gray-300">WCAG Compliance</div>
               </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold mb-2">2.5x</div>
+              <div>
+                <div className="text-4xl font-normal mb-2">2.5x</div>
                 <div className="text-gray-300">Faster Content Access</div>
               </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold mb-2">100%</div>
+              <div>
+                <div className="text-4xl font-normal mb-2">100%</div>
                 <div className="text-gray-300">Luxembourgish Support</div>
               </div>
             </div>

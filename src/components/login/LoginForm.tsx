@@ -76,7 +76,7 @@ export default function LoginForm() {
         {isLoading ? `${t.login}...` : t.login}
       </button>
 
-      <div className="text-center">
+      <div>
       </div>
     </form>
   )

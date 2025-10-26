@@ -20,7 +20,7 @@ export default function Hero() {
               {t.heroDescription.split('\n').map((line, index) => {
                 if (line.startsWith('**') && line.endsWith('**')) {
                   return (
-                    <h3 key={index} className="font-semibold text-base sm:text-lg mb-2 mt-4">
+                    <h3 key={index} className="font-normal text-base sm:text-lg mb-2 mt-4">
                       {line.replace(/\*\*/g, '')}
                     </h3>
                   );
@@ -44,13 +44,13 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-4">
               <Link 
                 href="/contact"
-                className="px-6 py-4 sm:px-6 sm:py-3 bg-black text-white border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-base sm:text-base font-medium text-center"
+                className="px-6 py-4 sm:px-6 sm:py-3 bg-black text-white border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-base sm:text-base font-normal"
               >
                 {t.contact}
               </Link>
               <Link 
                 href="/login"
-                className="px-6 py-4 sm:px-6 sm:py-3 bg-white text-black border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-base sm:text-base font-medium text-center"
+                className="px-6 py-4 sm:px-6 sm:py-3 bg-white text-black border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-base sm:text-base font-normal"
               >
                 {t.login}
               </Link>

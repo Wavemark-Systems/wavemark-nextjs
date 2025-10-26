@@ -13,7 +13,7 @@ export default function LoginPage() {
       
       <div className="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12 min-h-[calc(100vh-160px)]">
         <div className="max-w-md w-full">
-          <div className="text-center mb-8">
+          <div className="mb-8">
             <h1 className="text-3xl sm:text-4xl font-normal text-black mb-2">
               {t.login}
             </h1>

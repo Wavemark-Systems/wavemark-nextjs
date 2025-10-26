@@ -21,37 +21,37 @@ export default function Announcements() {
 
         {/* Interactive Information Cards */}
         <div className="mb-8 sm:mb-16">
-          <h2 className="text-xl sm:text-2xl font-medium text-black mb-6 sm:mb-8 text-center">
+          <h2 className="text-xl sm:text-2xl font-normal text-black mb-6 sm:mb-8">
             Announcement Solutions
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {/* Transportation Hub Card */}
-            <div className="bg-white border border-gray-200 rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-black mb-3">Transportation</h3>
+            <div className="p-6">
+              <h3 className="text-lg font-normal text-black mb-3">Transportation</h3>
               <p className="text-gray-600 text-sm">
                 Clear announcements for train stations, airports, and bus terminals with professional audio quality.
               </p>
             </div>
 
             {/* Shopping Center Card */}
-            <div className="bg-white border border-gray-200 rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-black mb-3">Retail</h3>
+            <div className="p-6">
+              <h3 className="text-lg font-normal text-black mb-3">Retail</h3>
               <p className="text-gray-600 text-sm">
                 Automated announcements for shopping centers, stores, and retail environments.
               </p>
             </div>
 
             {/* Healthcare Card */}
-            <div className="bg-white border border-gray-200 rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-black mb-3">Healthcare</h3>
+            <div className="p-6">
+              <h3 className="text-lg font-normal text-black mb-3">Healthcare</h3>
               <p className="text-gray-600 text-sm">
                 Professional announcements for hospitals, clinics, and healthcare facilities.
               </p>
             </div>
 
             {/* Education Card */}
-            <div className="bg-white border border-gray-200 rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-black mb-3">Education</h3>
+            <div className="p-6">
+              <h3 className="text-lg font-normal text-black mb-3">Education</h3>
               <p className="text-gray-600 text-sm">
                 School announcements, class schedules, and emergency notifications in Luxembourgish.
               </p>
@@ -63,7 +63,7 @@ export default function Announcements() {
         <div className="space-y-16">
           {/* Interactive Tabs Section */}
           <section>
-            <h2 className="text-xl sm:text-2xl font-medium text-black mb-6 sm:mb-8 border-b border-gray-200 pb-2">
+            <h2 className="text-xl sm:text-2xl font-normal text-black mb-6 sm:mb-8 border-b border-gray-200 pb-2">
               Details
             </h2>
             
@@ -124,7 +124,7 @@ export default function Announcements() {
                 <div className="bg-gray-50 p-8 rounded-lg">
                   <div className="grid md:grid-cols-2 gap-8">
                     <div>
-                      <h3 className="text-lg font-medium text-black mb-4">Audio Quality</h3>
+                      <h3 className="text-lg font-normal text-black mb-4">Audio Quality</h3>
                       <ul className="space-y-2 text-gray-700">
                         <li>• Clear, intelligible speech</li>
                         <li>• Consistent volume levels</li>
@@ -132,7 +132,7 @@ export default function Announcements() {
                       </ul>
                     </div>
                     <div>
-                      <h3 className="text-lg font-medium text-black mb-4">System Integration</h3>
+                      <h3 className="text-lg font-normal text-black mb-4">System Integration</h3>
                       <ul className="space-y-2 text-gray-700">
                         <li>• Real-time processing</li>
                         <li>• Scalable architecture</li>
@@ -147,20 +147,20 @@ export default function Announcements() {
 
           {/* Interactive Stats Section */}
           <section className="bg-black text-white rounded-2xl p-6 sm:p-12">
-            <h2 className="text-xl sm:text-2xl font-medium mb-6 sm:mb-8 text-center">
+            <h2 className="text-xl sm:text-2xl font-normal mb-6 sm:mb-8">
               Announcement Impact
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
-              <div className="text-center">
-                <div className="text-4xl font-bold mb-2">24/7</div>
+              <div>
+                <div className="text-4xl font-normal mb-2">24/7</div>
                 <div className="text-gray-300">Automated Operation</div>
               </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold mb-2">99.9%</div>
+              <div>
+                <div className="text-4xl font-normal mb-2">99.9%</div>
                 <div className="text-gray-300">Uptime Reliability</div>
               </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold mb-2">100%</div>
+              <div>
+                <div className="text-4xl font-normal mb-2">100%</div>
                 <div className="text-gray-300">Luxembourgish Native</div>
               </div>
             </div>

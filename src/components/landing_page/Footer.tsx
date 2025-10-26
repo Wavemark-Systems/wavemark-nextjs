@@ -36,7 +36,7 @@ export default function Footer() {
           </div>
         </div>
         
-        <div className="pt-4 sm:pt-6 text-center">
+        <div className="pt-4 sm:pt-6">
           <p className="text-xs text-gray-500">
             © 2025 {t.brand}. {t.allRightsReserved}
           </p>

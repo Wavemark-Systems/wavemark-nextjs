@@ -70,7 +70,7 @@ export default function TopBar() {
             <div className="space-y-4">
               {/* Solutions Dropdown */}
               <div>
-                <button className="flex items-center justify-between w-full text-left py-2 text-base font-medium text-black">
+                <button className="flex items-center justify-between w-full text-left py-2 text-base font-normal text-black">
                   {t.solutions}
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -92,11 +92,24 @@ export default function TopBar() {
                 </div>
               </div>
 
-              {/* Other Navigation Links */}
-              <Link href="/company" className="block py-2 text-base font-medium text-black hover:text-gray-600 transition-colors">
-                {t.company}
-              </Link>
-              <Link href="/careers" className="block py-2 text-base font-medium text-black hover:text-gray-600 transition-colors">
+              {/* Company Dropdown */}
+              <div>
+                <button className="flex items-center justify-between w-full text-left py-2 text-base font-normal text-black">
+                  {t.company}
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div className="ml-4 mt-2 space-y-2">
+                  <Link href="/mission" className="block py-2 text-sm text-gray-600 hover:text-black transition-colors">
+                    Our Mission
+                  </Link>
+                  <Link href="/team" className="block py-2 text-sm text-gray-600 hover:text-black transition-colors">
+                    Our Team
+                  </Link>
+                </div>
+              </div>
+              <Link href="/careers" className="block py-2 text-base font-normal text-black hover:text-gray-600 transition-colors">
                 {t.careers}
               </Link>
 
@@ -104,13 +117,13 @@ export default function TopBar() {
               <div className="pt-4 space-y-3">
                 <Link 
                   href="/contact"
-                  className="block w-full px-4 py-3 bg-black text-white border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-sm font-medium text-center"
+                  className="block w-full px-4 py-3 bg-black text-white border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-sm font-normal"
                 >
                   {t.contact}
                 </Link>
                 <Link 
                   href="/login"
-                  className="block w-full px-4 py-3 bg-white text-black border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-sm font-medium text-center"
+                  className="block w-full px-4 py-3 bg-white text-black border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-sm font-normal"
                 >
                   {t.login}
                 </Link>
@@ -153,9 +166,17 @@ export default function TopBar() {
             </NavigationMenuItem>
             
             <NavigationMenuItem>
-              <NavigationMenuLink asChild className={`${navigationMenuTriggerStyle()} text-sm sm:text-base lg:text-lg py-0`}>
-                <Link href="/company">{t.company}</Link>
-              </NavigationMenuLink>
+              <NavigationMenuTrigger className="text-sm sm:text-base lg:text-lg py-0">{t.company}</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid grid-cols-1 w-[300px] gap-3 p-4">
+                  <ListItem href="/mission" title="Our Mission">
+                    Discover our mission to preserve Luxembourgish language
+                  </ListItem>
+                  <ListItem href="/team" title="Our Team">
+                    Meet the co-founders behind Neiom Systems
+                  </ListItem>
+                </ul>
+              </NavigationMenuContent>
             </NavigationMenuItem>
             
             <NavigationMenuItem>
@@ -170,13 +191,13 @@ export default function TopBar() {
       <div className="flex gap-2">
         <Link 
           href="/contact"
-          className="px-2 py-1.5 sm:px-3 sm:py-2 bg-black text-white border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-xs sm:text-sm font-medium leading-none"
+          className="px-2 py-1.5 sm:px-3 sm:py-2 bg-black text-white border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-xs sm:text-sm font-normal leading-none"
         >
           {t.contact}
         </Link>
         <Link 
           href="/login"
-          className="px-2 py-1.5 sm:px-3 sm:py-2 bg-white text-black border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-xs sm:text-sm font-medium leading-none"
+          className="px-2 py-1.5 sm:px-3 sm:py-2 bg-white text-black border-2 border-black rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] transition-all duration-150 text-xs sm:text-sm font-normal leading-none"
         >
           {t.login}
         </Link>
